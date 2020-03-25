@@ -1,1 +1,1 @@
-export { useExample } from "../redux/ducks/example"
+export { useRegister } from "../redux/ducks/register/index"
