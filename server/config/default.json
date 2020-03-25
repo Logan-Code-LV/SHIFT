@@ -1,0 +1,9 @@
+{
+  "db": {
+    "host": "localhost",
+    "user": "shift",
+    "password": "shift123!",
+    "database": "shift"
+  },
+  "secret": "_c$d7dsH!Ec8rG+77sy6gSBQg#rRzbD^sa=bK#mWk2pdsHkbNH-67BP!a54CH+sV"
+}

@@ -1,13 +1,21 @@
 import React from "react"
-import { useExample } from "../hooks"
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import { AuthProvider } from "react-auth"
+
+import Login from "./Login"
+import Dashboardr from "./Dashboardr"
+import Viewfreelancers from "./Viewfreelancers.js"
 
 export default props => {
-  const { foo, get } = useExample()
-
   return (
-    <div>
-      <h1>Hello World {foo}</h1>
-      <button onClick={e => get()}>GET</button>
-    </div>
+    <AuthProvider>
+      <Router>
+        <div className="box">
+          <Route path="/login" component={Login} />
+          <Route exact path="/Dashboardr" component={Dashboardr} />
+          <Route exact path="/Viewfreelancers" component={Viewfreelancers} />
+        </div>
+      </Router>
+    </AuthProvider>
   )
 }
