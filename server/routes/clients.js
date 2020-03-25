@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-conn = require("../routes/db")
+let conn = require("../routes/db")
 const sha512 = require("js-sha512")
 const randomString = require("../routes/utils/randomstring")
 const jwt = require("jsonwebtoken")

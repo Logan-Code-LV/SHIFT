@@ -32,9 +32,9 @@ function registerClients(username, password, name, website) {
       })
   })
 }
-// function getRProfile(name, website) {
+// function getRProfile(username) {
 //   return dispatch => {
-//     axios.get("/api/clients", { name, website }).then(resp => {
+//     axios.get("/api/profile/" + username).then(resp => {
 //       const data = resp.data
 //       dispatch({
 //         type: GET_RPROFILE,
@@ -46,7 +46,7 @@ function registerClients(username, password, name, website) {
 
 export function useRegister() {
   const dispatch = useDispatch()
-  // const rprofile = (name, website) => getRProfile(name, website)
+  // const rprofile = (username) => dispatch(getRProfile(username))
   const create = (username, password, name, website) =>
     registerClients(username, password, name, website)
 
