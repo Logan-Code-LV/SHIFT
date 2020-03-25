@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-conn = require("../routes/db")
+const conn = require("./db")
 const sha512 = require("js-sha512")
-const randomString = require("../routes/utils/randomstring")
+const randomString = require("../utils/randomstring")
 const jwt = require("jsonwebtoken")
 const config = require("config")
 
@@ -21,6 +21,16 @@ router.post("/register", (req, res, next) => {
         message: "username exists"
       })
     } else {
+      const sql = `
+  INSERT INTO clients (username, password, salt)
+  VALUES (?, ?, ?)
+  `
+
+      conn.query(sql, [username, password, salt], (err1, results1, fields1) => {
+        res.json({
+          message: "client added successfully!"
+        })
+      })
       const sql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
 
       conn.query(
@@ -39,6 +49,9 @@ router.post("/register", (req, res, next) => {
 router.post("/login", (req, res, next) => {
   const username = req.body.username
   const password = req.body.password
+  const getSQL =
+    "SELECT username, salt, password FROM clients WHERE username = ?"
+  conn.query(getSQL, [username], (salterr, saltresults, saltfields) => {
 
   const getSQL =
     "SELECT username, salt, password FROM clients WHERE username = ?"
