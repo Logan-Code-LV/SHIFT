@@ -1,5 +1,6 @@
 const express = require("express")
 const clientsRoutes = require("./routes/clients")
+const freelancersRoutes = require("./routes/freelancers")
 const protectedRoutes = require("./routes/protected")
 const jobRoutes = require("./routes/jobs")
 const viewjobposts = require("./routes/viewjobposts")
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.use("/api", clientsRoutes)
+app.use("/api", freelancersRoutes)
 app.use("/api", jobRoutes)
 app.use("/api", viewjobposts)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
@@ -26,6 +28,7 @@ app.use(function(err, req, res, next) {
 })
 
 app.use("/api", clientsRoutes)
+app.use("/api", freelancersRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 app.use(function(req, res, next) {
   next(createError(404))
