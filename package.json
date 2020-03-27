@@ -16,11 +16,13 @@
   "homepage": "https://github.com/PC-Fullstack-Spring-2020/boilerpolate#readme",
   "dependencies": {
     "concurrently": "^5.1.0",
+    "express-jwt": "^5.3.1",
     "js-sha512": "^0.8.0",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
-    "express-jwt": "^5.3.1",
-    "salt": "^0.5.5"
+    "salt": "^0.5.5",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
   },
   "boilerplate": {
     "name": "boilerplate",

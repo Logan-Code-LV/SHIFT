@@ -1,23 +1,20 @@
-// const express = require("express")
-// const router = express.Router()
-// const conn = require("./db")
+const express = require("express")
+const router = express.Router()
+const conn = require("./db")
 
-// router.post("/jobpost", (req, res, next) => {
-//   const insertSql = `INSERT INTO jobpost (restname, jobdesc, pay) VALUES (?, ?, ?)`
+router.post("/jobpost", (req, res, next) => {
+  const restname = req.body.restname
+  const jobdesc = req.body.jobdesc
+  const pay = req.body.pay
 
-//   const restname = req.body.restname
-//   const jobdesc = req.body.jobdesc
-//   const pay = req.body.pay
+  const insertSql = `INSERT INTO jobpost (restname, jobdesc, pay) VALUES (?, ?, ?)`
 
-//   conn.query(
-//     insertSql,
-//     [req.body.restname, req.body.jobdesc, req.body.pay],
-//     (err1, results1, fields1) => {
-//       res.json({
-//         message: "job added successfully!"
-//       })
-//     }
-//   )
-// })
+  conn.query(insertSql, [restname, jobdesc, pay], (err, results, fields) => {
+    res.json({
+      message: "job added successfully!"
+    })
+  })
+  console.log(results)
+})
 
-// module.exports = router
+module.exports = router

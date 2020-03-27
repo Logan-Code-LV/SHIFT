@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { useRegister } from "../hooks"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import "../styles/register.css"
 
 export default props => {
   const [username, setUsername] = useState("")
@@ -18,7 +20,7 @@ export default props => {
   }
   return (
     <div className="register">
-      <h1>SHIFT</h1>
+      <h1>Register</h1>
       <form onSubmit={handleRegister}>
         <input
           type="text"
@@ -49,7 +51,18 @@ export default props => {
         ></input>
         <br></br>
         <button type="submit">Register</button>
+        <Link to="/login"> Login </Link>
       </form>
+      <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   )
 }

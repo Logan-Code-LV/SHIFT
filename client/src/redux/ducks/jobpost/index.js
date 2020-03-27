@@ -16,23 +16,13 @@ export default (state = initialState, action) => {
   }
 }
 
-function getPost(id) {
-  return dispatch => {
-    axios.get("/api/jobpost/" + id).then(resp => {
-      dispatch({
-        type: JOB_POST,
-        payload: resp.data[0]
-      })
-    })
-  }
-}
-
-function createPost(restname, jobdesc, pay) {
+function createPost(job) {
+  console.log(job)
   return new Promise((resolve, reject) => {
     axios
-      .post("/api/jobpost", { restname, jobdesc, pay })
+      .post("/api/jobpost", job)
       .then(resp => {
-        resolve(resp.data.id)
+        resolve(resp.data)
       })
       .catch(e => {
         reject()
@@ -41,10 +31,8 @@ function createPost(restname, jobdesc, pay) {
 }
 
 export function usePost() {
-  const dispatch = useDispatch()
-  const create = (id, restname, jobdesc, pay) =>
-    createPost(id, restname, jobdesc, pay)
-  const get = id => dispatch(getPost(id))
+  // const dispatch = useDispatch()
+  const createJob = job => createPost(job)
 
-  return { create, createPost, get }
+  return { createJob }
 }
