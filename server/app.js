@@ -4,6 +4,7 @@ const freelancersRoutes = require("./routes/freelancers")
 const protectedRoutes = require("./routes/protected")
 const jobRoutes = require("./routes/jobs")
 const viewjobposts = require("./routes/viewjobposts")
+const restaurantRoutes = require("./routes/restaurant")
 const expressjwt = require("express-jwt")
 const config = require("config")
 
@@ -16,6 +17,7 @@ app.use("/api", clientsRoutes)
 app.use("/api", freelancersRoutes)
 app.use("/api", jobRoutes)
 app.use("/api", viewjobposts)
+app.use("/api", restaurantRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
 app.use(function(req, res, next) {
@@ -30,6 +32,7 @@ app.use(function(err, req, res, next) {
 app.use("/api", clientsRoutes)
 app.use("/api", freelancersRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
+
 app.use(function(req, res, next) {
   next(createError(404))
 })
