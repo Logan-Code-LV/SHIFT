@@ -11,7 +11,7 @@ export default props => {
     e.preventDefault()
 
     signin(username, password).then(resp => {
-      props.history.push("/Dashboardr")
+      props.history.push("/rprofile")
     })
   }
 

@@ -1,18 +1,24 @@
-import React, { useState } from "react"
-import { useRegister } from "../hooks"
+import React, { useState, useEffect } from "react"
+import { useAuth } from "react-auth"
+import { useProfile } from "../hooks"
+import { Link } from "react-router-dom"
 
 export default props => {
-  const { create } = useRegister()
+  const { profile } = useAuth()
+  const { rprofile, rest } = useProfile()
+
+  useEffect(() => {
+    rprofile(profile.username)
+    console.log(profile.username)
+  }, [])
 
   return (
     <div className="Rprofile">
       <h1>SHIFT</h1>
-      {create.map(profile => (
-        <p>
-          <strong>{profile.name}:</strong>
-          <strong>{profile.website}</strong>
-        </p>
-      ))}
+      <h3>{rest.name}</h3>
+      <Link>
+        <h5>{rest.website}</h5>
+      </Link>
     </div>
   )
 }

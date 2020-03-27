@@ -31,10 +31,10 @@ router.post("/register", (req, res, next) => {
           message: "client added successfully!"
         })
       })
-      const sql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
+      const insertsql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
 
       conn.query(
-        sql,
+        insertsql,
         [username, password, salt, name, website],
         (err1, results1, fields1) => {
           res.json({
@@ -52,30 +52,30 @@ router.post("/login", (req, res, next) => {
   const getSQL =
     "SELECT username, salt, password FROM clients WHERE username = ?"
   conn.query(getSQL, [username], (salterr, saltresults, saltfields) => {
+    const getSQL =
+      "SELECT username, salt, password FROM clients WHERE username = ?"
 
-  const getSQL =
-    "SELECT username, salt, password FROM clients WHERE username = ?"
-
-  conn.query(getSQL, [username], (salterr, saltresults, saltfields) => {
-    console.log(salterr)
-    if (saltresults.length > 0) {
-      const salt = saltresults[0].salt
-      const userpass = saltresults[0].password
-      if (sha512(password + salt) === userpass) {
-        // log them in
-        const token = jwt.sign(
-          { username: username, project: "clients" },
-          config.get("secret")
-        )
-        res.json({
-          token: token
-        })
-      } else {
-        res.status(401).json({
-          message: "Invalid user or password"
-        })
+    conn.query(getSQL, [username], (salterr, saltresults, saltfields) => {
+      console.log(salterr)
+      if (saltresults.length > 0) {
+        const salt = saltresults[0].salt
+        const userpass = saltresults[0].password
+        if (sha512(password + salt) === userpass) {
+          // log them in
+          const token = jwt.sign(
+            { username: username, project: "clients" },
+            config.get("secret")
+          )
+          res.json({
+            token: token
+          })
+        } else {
+          res.status(401).json({
+            message: "Invalid user or password"
+          })
+        }
       }
-    }
+    })
   })
 })
 
