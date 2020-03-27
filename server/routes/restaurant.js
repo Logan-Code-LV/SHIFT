@@ -1,5 +1,5 @@
 const router = require("express").Router()
-let conn = require("../routes/db")
+let conn = require("./db")
 
 router.get("/shift", (req, res, next) => {
   res.json({

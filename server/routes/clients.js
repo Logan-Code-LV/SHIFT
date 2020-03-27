@@ -31,10 +31,10 @@ router.post("/register", (req, res, next) => {
           message: "client added successfully!"
         })
       })
-      const sql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
+      const insertsql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
 
       conn.query(
-        sql,
+        insertsql,
         [username, password, salt, name, website],
         (err1, results1, fields1) => {
           res.json({
