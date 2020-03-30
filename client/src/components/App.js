@@ -1,24 +1,24 @@
 import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { AuthProvider } from "react-auth"
-import Register from "./Register"
+import Restregister from "./Restregister"
 import RProfile from "./RProfile"
-import Login from "./Login"
-// import Dashboardr from "./Dashboardr"
+import Restlogin from "./Restlogin"
 import Viewfreelancers from "./Viewfreelancers.js"
 import Jobpost from "./Jobpost.js"
+import FProfile from "./FProfile"
 
 export default props => {
   return (
     <AuthProvider>
       <Router>
         <div className="box">
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/restlogin" component={Restlogin} />
           <Route exact path="/jobpost" component={Jobpost} />
-          {/* <Route exact path="/dashboardr" component={Dashboardr} /> */}
           <Route exact path="/Viewfreelancers" component={Viewfreelancers} />
-          <Route path="/rprofile" component={RProfile} />
-          <Route exact path="/" component={Register} />
+          <Route exact path="/rprofile" component={RProfile} />
+          <Route exact path="/" component={Restregister} />
+          <Route exact path="/fprofile" component={FProfile} />
         </div>
       </Router>
     </AuthProvider>

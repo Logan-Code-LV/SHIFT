@@ -15,7 +15,7 @@ export default props => {
     e.preventDefault()
 
     create(username, password, name, website).then(resp => {
-      props.history.push("/dashboardr")
+      props.history.push("/rprofile")
     })
   }
   return (
