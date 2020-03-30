@@ -23,6 +23,20 @@ router.post("/register", (req, res, next) => {
     } else {
       const insertSql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
 
+      //     const sql = `
+      // INSERT INTO clients (username, password, salt)
+      // VALUES (?, ?, ?)
+      // `
+
+      // conn.query(sql, [username, password, salt], (err1, results1, fields1) => {
+      //   res.json({
+      //     message: "client added successfully!"
+      //   })
+      // })
+
+//       const insertSql = `INSERT INTO clients (username, password, salt) VALUES (?, ?, ?)`
+
+
       conn.query(
         insertSql,
         [username, password, salt, name, website],
