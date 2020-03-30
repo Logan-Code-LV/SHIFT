@@ -15,12 +15,20 @@ export default props => {
     e.preventDefault()
 
     create(username, password, name, website).then(resp => {
+
+      
+
       props.history.push("/jobpost")
+
     })
   }
   return (
     <div className="register">
+
+     
+
       <h1>Restaurant Registration</h1>
+
       <form onSubmit={handleRegister}>
         <input
           type="text"
@@ -51,7 +59,9 @@ export default props => {
         ></input>
         <br></br>
         <button type="submit">Register</button>
+
         <Link to="/restlogin"> Login </Link>
+
       </form>
       <ul class="box-area">
         <li></li>
