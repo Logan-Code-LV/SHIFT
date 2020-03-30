@@ -14,7 +14,7 @@ export default props => {
 
   return (
     <div className="Rprofile">
-      <h1>SHIFT</h1>
+      <h1>Your Profile</h1>
       <h3>{rest.name}</h3>
       <Link>
         <h5>{rest.website}</h5>

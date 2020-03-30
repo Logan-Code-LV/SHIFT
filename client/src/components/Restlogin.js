@@ -15,13 +15,14 @@ import "../styles/login.css"
 export default props => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+
   const { signin } = useAuth()
 
   function handleLogin(e) {
     e.preventDefault()
 
     signin(username, password).then(resp => {
-      props.history.push("/jobpost")
+      props.history.push("/rprofile")
     })
   }
 
