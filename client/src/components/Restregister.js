@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { useRegister } from "../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import "../styles/register.css"
+
+import "../styles/login.css"
 
 export default props => {
   const [username, setUsername] = useState("")
@@ -15,18 +16,11 @@ export default props => {
     e.preventDefault()
 
     create(username, password, name, website).then(resp => {
-
-      
-
       props.history.push("/jobpost")
-
     })
   }
   return (
     <div className="register">
-
-     
-
       <h1>Restaurant Registration</h1>
 
       <form onSubmit={handleRegister}>
@@ -59,9 +53,7 @@ export default props => {
         ></input>
         <br></br>
         <button type="submit">Register</button>
-
         <Link to="/restlogin"> Login </Link>
-
       </form>
       <ul class="box-area">
         <li></li>

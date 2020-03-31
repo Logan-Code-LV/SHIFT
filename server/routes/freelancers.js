@@ -29,7 +29,15 @@ router.post("/registerfree", (req, res, next) => {
 
       conn.query(
         insertSql,
-        [username, password, salt],
+        [
+          username,
+          password,
+          salt,
+          firstname,
+          lastname,
+          jobposition,
+          qualifications
+        ],
         (err1, results1, fields1) => {
           console.log(err1)
           res.json({

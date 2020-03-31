@@ -43,6 +43,7 @@ router.post("/register", (req, res, next) => {
           res.json({
             message: "client added successfully"
           })
+          console.log(err1)
         }
       )
     }
