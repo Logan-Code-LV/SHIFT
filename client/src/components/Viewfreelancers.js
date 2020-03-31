@@ -7,10 +7,10 @@ export default props => {
   const { profile } = useAuth()
   const { viewpost, view } = useJobs()
 
-  // useEffect(() => {
-  //   viewpost(profile.username)
-  //   console.log(view.restname)
-  // }, [])
+  useEffect(() => {
+    viewpost(profile.username)
+    console.log(view.restname)
+  }, [])
 
   return (
     <div className="Rprofile">

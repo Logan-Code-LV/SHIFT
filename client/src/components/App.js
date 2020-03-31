@@ -10,14 +10,16 @@ import Restlogin from "./Restlogin"
 import Viewfreelancers from "./Viewfreelancers.js"
 import Jobpost from "./Jobpost.js"
 import FProfile from "./FProfile"
-import Home from "./Home"
+// import LoginSem from "./semantic/LoginSemantic.js"
+
+import "../styles/login.css"
 
 export default props => {
   return (
     <AuthProvider>
       <Router>
         <div className="box">
-          <Route exact path="/home" component={Home} />
+          {/* <Route exact path="/login" component={LoginSem} /> */}
           <Route exact path="/restlogin" component={Restlogin} />
           <Route exact path="/freelogin" component={Freelogin} />
           <Route exact path="/freeregister" component={Freeregister} />
@@ -28,7 +30,7 @@ export default props => {
           <Route exact path="/" component={Restregister} />
           <Route exact path="/fprofile" component={FProfile} />
           <Route exact path="/freelogin" component={Freelogin} />
-          // <Route exact path="/restregister" component={Restregister} />
+          <Route exact path="/restregister" component={Restregister} />
         </div>
       </Router>
     </AuthProvider>
