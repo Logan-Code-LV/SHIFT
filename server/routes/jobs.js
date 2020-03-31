@@ -2,17 +2,15 @@ const express = require("express")
 const router = express.Router()
 const conn = require("./db")
 
-router.post("/jobpost", (req, res, next) => {
-  const restname = req.body.restname
-  const jobdesc = req.body.jobdesc
-  const pay = req.body.pay
+router.get("/jobpost/:restname", (req, res, next) => {
+  const restname = req.params.restname
 
-  const insertSql = `INSERT INTO jobpost (restname, jobdesc, pay) VALUES (?, ?, ?)`
+  const insertSql = `
+SELECT c.username jp.restname jp.jobdesc jp.pay
+from shift.clients c LEFT JOIN jobpost jp on c.restname = jp.restname WHERE jp.restname = ?;`
 
-  conn.query(insertSql, [restname, jobdesc, pay], (err, results, fields) => {
-    res.json({
-      message: "job added successfully!"
-    })
+  conn.query(insertSql, [restname], (err, results, fields) => {
+    res.json(restname)
   })
   console.log(results)
 })
