@@ -11,8 +11,6 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case FREE_REGISTER:
       return { ...state, registration: action.payload }
-    // case RPROFILE:
-    //   return { ...state, rprofile: action.payload }
     default:
       return state
   }

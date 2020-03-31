@@ -12,7 +12,6 @@ router.post("/register", (req, res, next) => {
   const password = sha512(req.body.password + salt)
   const name = req.body.name
   const website = req.body.website
-  const type = "restaurant"
 
   const checkSQL = "SELECT count(1) as count FROM clients WHERE username = ?"
 
@@ -22,23 +21,11 @@ router.post("/register", (req, res, next) => {
         message: "username exists"
       })
     } else {
-      //     const sql = `
-      // INSERT INTO clients (username, password, salt)
-      // VALUES (?, ?, ?)
-      // `
-
-      // conn.query(sql, [username, password, salt], (err1, results1, fields1) => {
-      //   res.json({
-      //     message: "client added successfully!"
-      //   })
-      // })
-      const insertSql = `INSERT INTO clients (username, password, salt, name, website, type) VALUES (?, ?, ?, ?, ?, ?)`
-
-      //       const insertSql = `INSERT INTO clients (username, password, salt) VALUES (?, ?, ?)`
+      const insertSql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
 
       conn.query(
         insertSql,
-        [username, password, salt, name, website, type],
+        [username, password, salt, name, website],
         (err1, results1, fields1) => {
           res.json({
             message: "client added successfully"
@@ -65,7 +52,6 @@ router.post("/login", (req, res, next) => {
         const salt = saltresults[0].salt
         const userpass = saltresults[0].password
         if (sha512(password + salt) === userpass) {
-          // log them in
           const token = jwt.sign(
             { username: username, project: "clients" },
             config.get("secret")

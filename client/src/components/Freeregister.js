@@ -24,7 +24,7 @@ export default props => {
       jobposition,
       qualifications
     ).then(resp => {
-      props.history.push("/jobpost")
+      props.history.push("/dashboardf")
     })
   }
   return (

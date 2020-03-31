@@ -1,16 +1,5 @@
 import React, { useState } from "react"
 import { useAuth } from "react-auth"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Image,
-  Message,
-  Segment
-} from "semantic-ui-react"
-import "../styles/login.css"
 
 export default props => {
   const [username, setUsername] = useState("")
@@ -22,7 +11,7 @@ export default props => {
     e.preventDefault()
 
     signin(username, password).then(resp => {
-      props.history.push("/jobpost")
+      props.history.push("/dashboardr")
     })
   }
 

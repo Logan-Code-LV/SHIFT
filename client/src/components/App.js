@@ -2,7 +2,6 @@ import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { AuthProvider } from "react-auth"
 
-import Freelogin from "./Freelogin"
 import Freeregister from "./Freeregister"
 import Restregister from "./Restregister"
 import RProfile from "./RProfile"
@@ -10,6 +9,9 @@ import Restlogin from "./Restlogin"
 import Viewfreelancers from "./Viewfreelancers.js"
 import Jobpost from "./Jobpost.js"
 import FProfile from "./FProfile"
+
+import Freelogin from "./Freelogin"
+
 import Home from "./Home.js"
 // import LoginSem from "./semantic/LoginSemantic.js"
 
@@ -23,7 +25,6 @@ export default props => {
           {/* <Route exact path="/login" component={LoginSem} /> */}
           <Route exact path="/" component={Home} />
           <Route exact path="/restlogin" component={Restlogin} />
-          <Route exact path="/freelogin" component={Freelogin} />
           <Route exact path="/freeregister" component={Freeregister} />
           <Route exact path="/jobpost" component={Jobpost} />
           <Route exact path="/Viewfreelancers" component={Viewfreelancers} />
