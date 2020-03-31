@@ -10,6 +10,9 @@ router.post("/register", (req, res, next) => {
   const username = req.body.username
   const salt = randomString(20)
   const password = sha512(req.body.password + salt)
+  const name = req.body.name
+  const website = req.body.website
+  const type = "restaurant"
 
   const checkSQL = "SELECT count(1) as count FROM clients WHERE username = ?"
 
@@ -19,7 +22,6 @@ router.post("/register", (req, res, next) => {
         message: "username exists"
       })
     } else {
-
       //     const sql = `
       // INSERT INTO clients (username, password, salt)
       // VALUES (?, ?, ?)
@@ -30,14 +32,13 @@ router.post("/register", (req, res, next) => {
       //     message: "client added successfully!"
       //   })
       // })
-      const insertSql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
+      const insertSql = `INSERT INTO clients (username, password, salt, name, website, type) VALUES (?, ?, ?, ?, ?, ?)`
 
-//       const insertSql = `INSERT INTO clients (username, password, salt) VALUES (?, ?, ?)`
-
+      //       const insertSql = `INSERT INTO clients (username, password, salt) VALUES (?, ?, ?)`
 
       conn.query(
         insertSql,
-        [username, password, salt],
+        [username, password, salt, name, website, type],
         (err1, results1, fields1) => {
           res.json({
             message: "client added successfully"
