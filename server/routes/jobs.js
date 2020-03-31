@@ -11,8 +11,8 @@ from shift.clients c LEFT JOIN jobpost jp on c.restname = jp.restname WHERE jp.r
 
   conn.query(insertSql, [restname], (err, results, fields) => {
     res.json(restname)
+    console.log(results)
   })
-  console.log(results)
 })
 
 module.exports = router
