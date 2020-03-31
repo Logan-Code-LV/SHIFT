@@ -3,45 +3,36 @@ body {
   background: linear-gradient(to left, #084177, #687466, #cd8d7b, #fbc490);
 }
 
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
 h1 {
   color: white;
   width: 1000px;
   margin: 0 auto;
   font-size: 75px;
-  padding-bottom: 40px;
   text-align: center;
   font-family: "Lobster", cursive;
 }
 
-h4 {
-  font-family: "Lobster", cursive;
-  text-align: center;
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 600px;
   margin: 0 auto;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
 }
 
-.wrapper {
+.body {
+  color: white;
   width: 1000px;
   margin: 0 auto;
-  margin-top: 100px;
-}
-
-form {
+  font-size: 20px;
   text-align: center;
-  position: relative;
-  z-index: 10000;
-}
-
-input {
-  width: 200px;
-  height: 50px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input[type="text"]:focus {
-  border: 3px solid #555;
+  font-family: "Open Sans", sans-serif;
 }
 
 button {
@@ -53,6 +44,10 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.logins {
+  display: flex;
 }
 
 a {
@@ -67,6 +62,8 @@ a {
   text-decoration: none;
   font-size: 12px;
   margin-left: 5px;
+  position: relative;
+  z-index: 1000;
 }
 
 .box-area {

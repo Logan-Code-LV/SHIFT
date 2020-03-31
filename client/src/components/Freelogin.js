@@ -28,7 +28,7 @@ export default props => {
 
   return (
     <div className="wrapper">
-      <h1> Log In </h1>
+      <h4> Freelance Worker Login</h4>
       <form onSubmit={handleLogin}>
         <div className="username">
           <input
