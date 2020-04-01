@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import { usePost } from "../hooks"
 
-import Jobpost from "./Jobpost"
-import Viewfreelancers from "./Viewfreelancers"
-import AvailableJobs from "./AvailableJobs.js"
+import Viewjobs from "./Viewjobs.js"
+import SelectedJobs from "./SelectedJobs.js"
 
 import "../styles/dashboardr.css"
 
@@ -25,7 +24,8 @@ export default props => {
       <h1>Freelancer Dashboard</h1>
       <div className="dashboardrcomponents">
         <div className="freelancers">
-          <AvailableJobs />
+          <Viewjobs />
+          <SelectedJobs />
         </div>
       </div>
       <ul class="box-area">

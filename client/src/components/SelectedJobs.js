@@ -1,27 +1,22 @@
 import React from "react"
-import { userProducts } from "../hooks"
+import { useJobs } from "../hooks"
 import { useItems } from "../hooks"
 
 export default function(e) {
-  const { cart, toggle, isOpen, del, total } = useItems()
+  const { cart, toggle, isOpen } = useItems()
 
   return (
     <div className="cart">
       {isOpen ? <h1>OPEN</h1> : <h1>CLOSED</h1>}
-      <button onClick={e => toggle()}>
-        <FaShoppingCart />
-      </button>
+      <button onClick={e => toggle()}></button>
+
       {cart.map(item => (
-        <div key={item.id}>
-          <img className="cartimg" src={`/assets/${item.sku}_2.jpg`} />
-          <p>{item.title}</p>
-          <p>${item.price.toFixed(2)}</p>
-          <button onClick={e => del(item)}>X</button>
+        <div>
+          <p>{item.restname}</p>
+          <p>{item.jobdesc}</p>
+          <p>{item.pay}</p>
         </div>
       ))}
-      <div className="total">
-        <h3> Total: ${total}</h3>
-      </div>
     </div>
   )
 }
