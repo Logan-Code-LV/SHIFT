@@ -9,18 +9,17 @@ export default props => {
   const { viewpost, view, getId } = useJobs(profile.username)
 
   return (
-    <div className="Rprofile">
-      <h1>
-        Below are jobs that you have posted in the past and the freelancers that
-        showed an interest in working them!
-      </h1>
-      {view.map(item => (
-        <div>
-          <h3>{item.restname}</h3>
-          <h5>{item.jobdesc}</h5>
-          <h5>${item.pay} per hour</h5>
-        </div>
-      ))}
+    <div className="jobposts">
+      <h3>Your Job Posts:</h3>
+      <div className="viewfreelancers">
+        {view.map(item => (
+          <div className="onejob">
+            <h2 className="jobname">{item.restname}</h2>
+            <h3 className="jobdesc">Position: {item.jobdesc}</h3>
+            <h3 className="jobpay">Pay: ${item.pay} an hour</h3>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

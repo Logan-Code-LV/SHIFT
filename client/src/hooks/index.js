@@ -5,4 +5,6 @@ export { useJobs } from "../redux/ducks/viewjobposts/index.js"
 export { useProfile } from "../redux/ducks/rprofile/index"
 export { useRegisterfree } from "../redux/ducks/freeregistration/index.js"
 export { useProfilefree } from "../redux/ducks/fprofile/index"
+//Logan working on the shopping cart like feature for when Freelancers select "interested" in a job
+export { useItems } from "../redux/ducks/cart/index.js"
 export { useTheJob } from "../redux/ducks/viewjobs/index"

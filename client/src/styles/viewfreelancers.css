@@ -25,6 +25,42 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
+.dashboardrcomponents {
+  display: flex;
+  flex-direction: column;
+}
+
+.jobposts h3 {
+  text-align: center;
+  color: white;
+}
+
+.viewfreelancers {
+  border: solid white 1px;
+  text-align: center;
+  width: 675px;
+  grid-gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 0 auto;
+}
+
+.onejob {
+  border: solid white 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.jobname {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-transform: capitalize;
+  color: white;
+}
+
+.jobdesc {
+  text-transform: capitalize;
+}
+
 .body {
   color: white;
   width: 1000px;
@@ -34,12 +70,9 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-.viewfreelancers {
-  width: 500px;
-}
-
 .components {
   display: flex;
+  flex-direction: column;
   width: 800px;
   margin: 0 auto;
 }

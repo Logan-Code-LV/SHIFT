@@ -22,9 +22,13 @@ export default props => {
   return (
     <div className="dashboardr">
       <h1>Restaurant Dashboard</h1>
-      <div className="components">
-        <Jobpost />
-        <Viewfreelancers />
+      <div className="dashboardrcomponents">
+        <div className="freelancers">
+          <Viewfreelancers />
+        </div>
+        <div className="jobpost">
+          <Jobpost />
+        </div>
       </div>
       <ul class="box-area">
         <li></li>

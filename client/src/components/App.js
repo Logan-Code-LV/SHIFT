@@ -42,6 +42,7 @@ export default props => {
           <Route exact path="/jobpost" component={Jobpost} />
           <Route exact path="/Viewfreelancers" component={Viewfreelancers} />
           <Route exact path="/viewjobs" component={Viewjobs} />
+
         </div>
       </Router>
     </AuthProvider>
