@@ -25,15 +25,6 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-.header {
-  display: flex;
-  justify-content: space-evenly;
-  width: 600px;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-}
-
 .body {
   color: white;
   width: 1000px;
@@ -41,6 +32,16 @@ h6 {
   font-size: 20px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
+}
+
+.viewfreelancers {
+  width: 500px;
+}
+
+.components {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
 }
 
 button {
@@ -52,10 +53,6 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.logins {
-  display: flex;
 }
 
 a {

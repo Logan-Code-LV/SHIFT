@@ -2,18 +2,21 @@ import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { AuthProvider } from "react-auth"
 
+import Home from "./Home.js"
+
+import DashboardR from "./DashboardR.js"
+
 import Freeregister from "./Freeregister"
 import Restregister from "./Restregister"
-import RProfile from "./RProfile"
-import Restlogin from "./Restlogin"
-import Viewfreelancers from "./Viewfreelancers.js"
-import Jobpost from "./Jobpost.js"
-import FProfile from "./FProfile"
 
+import Restlogin from "./Restlogin"
 import Freelogin from "./Freelogin"
 
-import Home from "./Home.js"
-// import LoginSem from "./semantic/LoginSemantic.js"
+import RProfile from "./RProfile"
+import FProfile from "./FProfile"
+
+import Viewfreelancers from "./Viewfreelancers.js"
+import Jobpost from "./Jobpost.js"
 
 // import "../styles/login.css"
 
@@ -31,6 +34,7 @@ export default props => {
           <Route exact path="/rprofile" component={RProfile} />
           <Route exact path="/fprofile" component={FProfile} />
           <Route exact path="/restregister" component={Restregister} />
+          <Route exact path="/dashboardr" component={DashboardR} />
         </div>
       </Router>
     </AuthProvider>

@@ -16,7 +16,7 @@ export default props => {
 
   return (
     <div className="register">
-      <h1>Get Your Shift Covered</h1>
+      <h4>Post your job below to get Your SHIFT Covered</h4>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
