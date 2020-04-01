@@ -10,7 +10,7 @@ export default props => {
 
   return (
     <div className="jobposts">
-      <h3>Your Job Posts:</h3>
+      <h3>Select a job:</h3>
       <div className="viewfreelancers">
         {view.map(item => (
           <div className="onejob">

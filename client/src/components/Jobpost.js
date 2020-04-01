@@ -12,9 +12,9 @@ export default props => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    createJob({ restname, jobdesc, pay, restId }).then(resp => {
-      props.history.push("/Viewfreelancers")
-    })
+    createJob({ restname, jobdesc, pay, restId })
+    //   .then(resp => {
+    //     props.history.push("/Viewfreelancers")
   }
 
   return (

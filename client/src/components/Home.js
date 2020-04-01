@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useRegister } from "../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { useAuth } from "react-auth"
 
 import Restregister from "./Restregister"
 import Freeregister from "./Freeregister"
@@ -10,20 +11,30 @@ import Restlogin from "./Restlogin.js"
 import "../styles/home.css"
 
 export default props => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [name, setName] = useState("")
-  const [website, setWebsite] = useState("")
+  // const [username, setUsername] = useState("")
+  // const [password, setPassword] = useState("")
+  // const [name, setName] = useState("")
+  // const [website, setWebsite] = useState("")
 
-  const { create } = useRegister()
+  // const { create } = useRegister()
+  // const { signin } = useAuth()
 
-  function handleRegister(e) {
-    e.preventDefault()
+  // function handleRegister(e) {
+  //   e.preventDefault()
 
-    create(username, password, name, website).then(resp => {
-      props.history.push("/jobpost")
-    })
-  }
+  //   create(username, password, name, website).then(resp => {
+  //     props.history.push("/jobpost")
+  //   })
+  // }
+
+  // function handleLogin(e) {
+  //   e.preventDefault()
+
+  //   signin(username, password).then(resp => {
+  //     props.history.push("/jobpost")
+  //   })
+  // }
+
   return (
     <div className="container">
       <div className="body">
@@ -33,8 +44,8 @@ export default props => {
           that need positions filled
         </p>
         <div className="logins">
-          <Freelogin />
-          <Restlogin />
+          <Freelogin props={props} />
+          <Restlogin props={props} />
         </div>
         <br />
         <h6> New here? - Sign up below </h6>
