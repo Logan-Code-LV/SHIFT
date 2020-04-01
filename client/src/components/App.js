@@ -5,15 +5,10 @@ import { AuthProvider } from "react-auth"
 import Home from "./Home.js"
 
 import DashboardR from "./DashboardR.js"
+import DashboardF from "./DashboardF.js"
 
 import Freeregister from "./Freeregister"
 import Restregister from "./Restregister"
-import RProfile from "./RProfile"
-import Restlogin from "./Restlogin"
-import Viewfreelancers from "./Viewfreelancers.js"
-import Jobpost from "./Jobpost.js"
-import FProfile from "./FProfile"
-import Viewjobs from "./Viewjobs"
 
 import Restlogin from "./Restlogin"
 import Freelogin from "./Freelogin"
@@ -23,6 +18,7 @@ import FProfile from "./FProfile"
 
 import Viewfreelancers from "./Viewfreelancers.js"
 import Jobpost from "./Jobpost.js"
+import Viewjobs from "./Viewjobs"
 
 // import "../styles/login.css"
 
@@ -33,13 +29,18 @@ export default props => {
         <div className="box">
           {/* <Route exact path="/login" component={LoginSem} /> */}
           <Route exact path="/" component={Home} />
+
           <Route exact path="/restlogin" component={Restlogin} />
+          <Route exact path="/restlogin" component={Freelogin} />
+
           <Route exact path="/freeregister" component={Freeregister} />
+          <Route exact path="/restregister" component={Restregister} />
+
+          <Route exact path="/dashboardr" component={DashboardR} />
+          <Route exact path="/dashboardf" component={DashboardF} />
+
           <Route exact path="/jobpost" component={Jobpost} />
           <Route exact path="/Viewfreelancers" component={Viewfreelancers} />
-          <Route exact path="/rprofile" component={RProfile} />
-          <Route exact path="/fprofile" component={FProfile} />
-          <Route exact path="/restregister" component={Restregister} />
           <Route exact path="/viewjobs" component={Viewjobs} />
         </div>
       </Router>
