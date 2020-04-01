@@ -8,3 +8,4 @@ export { default as fprofileState } from "./fprofile/index"
 //Logan working on the shopping cart like feature for when Freelancers select "interested" in a job
 // export { default as productState } from "./product/actions"
 export { default as cartState } from "./cart/index.js"
+export { default as thejobState } from "./viewjobs/index"

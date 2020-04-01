@@ -7,6 +7,7 @@ import SelectedJobs from "./SelectedJobs.js"
 import "../styles/dashboardr.css"
 
 export default props => {
+
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")
@@ -21,12 +22,9 @@ export default props => {
 
   return (
     <div className="dashboardr">
-      <h1>Freelancer Dashboard</h1>
-      <div className="dashboardrcomponents">
-        <div className="freelancers">
-          <Viewjobs />
-          <SelectedJobs />
-        </div>
+      <h1>Restaurant Dashboard</h1>
+      <div className="components">
+        <Viewjobs />
       </div>
       <ul class="box-area">
         <li></li>
