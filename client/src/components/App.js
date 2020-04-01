@@ -8,6 +8,12 @@ import DashboardR from "./DashboardR.js"
 
 import Freeregister from "./Freeregister"
 import Restregister from "./Restregister"
+import RProfile from "./RProfile"
+import Restlogin from "./Restlogin"
+import Viewfreelancers from "./Viewfreelancers.js"
+import Jobpost from "./Jobpost.js"
+import FProfile from "./FProfile"
+import Viewjobs from "./Viewjobs"
 
 import Restlogin from "./Restlogin"
 import Freelogin from "./Freelogin"
@@ -34,7 +40,7 @@ export default props => {
           <Route exact path="/rprofile" component={RProfile} />
           <Route exact path="/fprofile" component={FProfile} />
           <Route exact path="/restregister" component={Restregister} />
-          <Route exact path="/dashboardr" component={DashboardR} />
+          <Route exact path="/viewjobs" component={Viewjobs} />
         </div>
       </Router>
     </AuthProvider>

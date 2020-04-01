@@ -5,4 +5,4 @@ export { default as viewpostState } from "./viewjobposts/index"
 export { default as rprofileState } from "./rprofile/index"
 export { default as registrationState } from "./freeregistration/index.js"
 export { default as fprofileState } from "./fprofile/index"
-
+export { default as thejobState } from "./viewjobs/index"
