@@ -1,15 +1,18 @@
 import React, { useState } from "react"
-import { usePost } from "../hooks"
+import { usePost, useJobs } from "../hooks"
+import { useAuth } from "react-auth"
 
 export default props => {
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")
   const { createJob } = usePost()
+  const { profile } = useAuth()
+  const { restId } = useJobs(profile.username)
 
   function handleSubmit(e) {
     e.preventDefault()
-    createJob({ restname, jobdesc, pay }).then(resp => {
+    createJob({ restname, jobdesc, pay, restId }).then(resp => {
       props.history.push("/Viewfreelancers")
     })
   }
