@@ -26,12 +26,12 @@ export default (state = initialState, action) => {
 }
 // 5. action creators
 
-function addJob(view) {
+function addJob(free) {
+  console.log(free)
   return dispatch => {
-    // const data = resp.data
     dispatch({
       type: ADD_ITEM,
-      payload: view
+      payload: free
     })
   }
 }
@@ -47,12 +47,8 @@ export function useItems() {
   const dispatch = useDispatch()
   const cart = useSelector(appState => appState.cartState.cart)
   const isOpen = useSelector(appState => appState.cartState.isOpen)
-  const add = view => dispatch(addJob(view))
+  const add = free => dispatch(addJob(free))
   const toggle = () => dispatch(toggleCart())
-
-  useEffect(() => {
-    console.log(cart)
-  }, [])
 
   return { cart, add, isOpen, toggle }
 }

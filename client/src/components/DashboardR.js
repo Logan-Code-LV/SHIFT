@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { usePost } from "../hooks"
 
 import Jobpost from "./Jobpost"
@@ -30,7 +31,7 @@ export default props => {
           <Jobpost />
         </div>
       </div>
-      <ul class="box-area">
+      <ul className="box-area">
         <li></li>
         <li></li>
         <li></li>

@@ -13,8 +13,8 @@ export default props => {
   function handleSubmit(e) {
     e.preventDefault()
     createJob({ restname, jobdesc, pay, restId })
-    //   .then(resp => {
-    //     props.history.push("/Viewfreelancers")
+    // .then(resp => {
+    //   props.history.push("/Viewfreelancers")
   }
 
   return (
@@ -44,7 +44,7 @@ export default props => {
         <br></br>
         <button type="submit">Submit Job</button>
       </form>
-      <ul class="box-area">
+      <ul className="box-area">
         <li></li>
         <li></li>
         <li></li>
