@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import { usePost } from "../hooks"
+import { usePost } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 import Viewjobs from "./Viewjobs.js"
 import SelectedJobs from "./SelectedJobs.js"
 
-import "../styles/dashboardf.css"
+import "../../styles/dashboardf.css"
 
 export default props => {
   return (
@@ -18,8 +18,8 @@ export default props => {
         contact you shortly!
       </p>
       <div className="dashboardfcomponents">
-        <SelectedJobs />
-        <Viewjobs />
+        <SelectedJobs props={props} />
+        <Viewjobs props={props} />
       </div>
       <ul className="box-area">
         <li></li>

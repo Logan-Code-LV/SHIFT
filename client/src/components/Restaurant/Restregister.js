@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { useRegister } from "../hooks"
+import { useRegister } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
-import "../styles/login.css"
+import "../../styles/login.css"
 
 export default props => {
   const [username, setUsername] = useState("")

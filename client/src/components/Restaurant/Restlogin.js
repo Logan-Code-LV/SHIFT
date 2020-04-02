@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useAuth } from "react-auth"
+import { useAuth } from "../../lib/react-auth-new.js"
 
 export default props => {
   const [username, setUsername] = useState("")
@@ -11,7 +11,7 @@ export default props => {
     e.preventDefault()
 
     signin(username, password).then(resp => {
-      props.props.history.push("/jobpost")
+      props.props.history.push("/dashboardr")
     })
   }
 
@@ -37,7 +37,7 @@ export default props => {
         </div>
         <button type="submit">Login</button>
       </form>
-      <ul class="box-area">
+      <ul className="box-area">
         <li></li>
         <li></li>
         <li></li>

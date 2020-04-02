@@ -33,9 +33,7 @@ function getTheJob() {
 export function useTheJob() {
   const dispatch = useDispatch()
   const free = useSelector(appState => appState.thejobState.jobs)
-  useEffect(() => {
-    dispatch(getTheJob())
-  }, [dispatch])
+  const get = () => dispatch(getTheJob())
 
-  return { free }
+  return { free, get }
 }

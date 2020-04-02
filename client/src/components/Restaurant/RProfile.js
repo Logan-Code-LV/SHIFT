@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useAuth } from "react-auth"
-import { useProfile } from "../hooks"
+import { useProfile } from "../../hooks"
 import { Link } from "react-router-dom"
 
 export default props => {

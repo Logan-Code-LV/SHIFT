@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useAuth } from "react-auth"
-import { useProfilefree } from "../hooks"
+import { useProfilefree } from "../../hooks"
 
 export default props => {
   const { profile } = useAuth()
