@@ -1,26 +1,24 @@
 import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
-import { AuthProvider } from "react-auth"
+import { AuthProvider } from "../lib/react-auth-new.js"
 
 import Home from "./Home.js"
 
-import DashboardR from "./DashboardR.js"
-import DashboardF from "./DashboardF.js"
+import DashboardR from "./Restaurant/DashboardR.js"
+import DashboardF from "./Freelancer/DashboardF.js"
 
-import Freeregister from "./Freeregister"
-import Restregister from "./Restregister"
+import Freeregister from "./Freelancer/Freeregister"
+import Restregister from "./Restaurant/Restregister"
 
-import Restlogin from "./Restlogin"
-import Freelogin from "./Freelogin"
+import Restlogin from "./Restaurant/Restlogin"
+import Freelogin from "./Freelancer/Freelogin"
 
-import RProfile from "./RProfile"
-import FProfile from "./FProfile"
+import RProfile from "./Restaurant/RProfile"
+import FProfile from "./Freelancer/FProfile"
 
-import Viewfreelancers from "./Viewfreelancers.js"
-import Jobpost from "./Jobpost.js"
-import Viewjobs from "./Viewjobs"
-
-// import "../styles/login.css"
+import Viewfreelancers from "./Restaurant/Viewfreelancers.js"
+import Jobpost from "./Restaurant/Jobpost.js"
+import Viewjobs from "./Freelancer/Viewjobs"
 
 export default props => {
   return (
@@ -42,7 +40,6 @@ export default props => {
           <Route exact path="/jobpost" component={Jobpost} />
           <Route exact path="/Viewfreelancers" component={Viewfreelancers} />
           <Route exact path="/viewjobs" component={Viewjobs} />
-
         </div>
       </Router>
     </AuthProvider>

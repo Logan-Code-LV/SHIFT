@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import { useRegisterfree } from "../hooks"
+import { useRegisterfree } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import "../styles/register.css"
+import "../../styles/register.css"
 
 export default props => {
   const [username, setUsername] = useState("")
@@ -10,8 +10,12 @@ export default props => {
   const [lastname, setLastname] = useState("")
   const [jobposition, setJobposition] = useState("")
   const [qualifications, setQualifications] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
 
   const { free } = useRegisterfree()
+
+  console.log(free)
 
   function handleRegister(e) {
     e.preventDefault()
@@ -22,7 +26,9 @@ export default props => {
       firstname,
       lastname,
       jobposition,
-      qualifications
+      qualifications,
+      email,
+      phone
     ).then(resp => {
       props.history.push("/dashboardf")
     })
@@ -58,7 +64,7 @@ export default props => {
           onChange={e => setLastname(e.target.value)}
           placeholder="Last Name"
         ></input>
-        <br />
+        <br></br>
         <input
           type="text"
           value={jobposition}
@@ -71,6 +77,20 @@ export default props => {
           value={qualifications}
           onChange={e => setQualifications(e.target.value)}
           placeholder="Tell us about your qualifications..."
+        ></input>
+        <br></br>
+        <input
+          type="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          placeholder="Enter your email"
+        ></input>
+        <br></br>
+        <input
+          type="text"
+          value={phone}
+          onChange={e => setPhone(e.target.value)}
+          placeholder="Enter your phone number"
         ></input>
         <br></br>
         <button type="submit">Register</button>

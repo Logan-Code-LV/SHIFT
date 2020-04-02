@@ -14,6 +14,8 @@ router.post("/registerfree", (req, res, next) => {
   const lastname = req.body.lastname
   const jobposition = req.body.jobposition
   const qualifications = req.body.qualifications
+  const email = req.body.email
+  const phone = req.body.phone
 
   const checkSQL =
     "SELECT count(1) as count FROM freelancers WHERE username = ?"
@@ -24,7 +26,7 @@ router.post("/registerfree", (req, res, next) => {
         message: "username exists"
       })
     } else {
-      const insertSql = `INSERT INTO freelancers (username, password, salt, firstname, lastname, jobposition, qualifications) VALUES (?, ?, ?, ?, ?, ?, ?)`
+      const insertSql = `INSERT INTO freelancers (username, password, salt, firstname, lastname, jobposition, qualifications, email, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
 
       conn.query(
         insertSql,
@@ -35,7 +37,9 @@ router.post("/registerfree", (req, res, next) => {
           firstname,
           lastname,
           jobposition,
-          qualifications
+          qualifications,
+          email,
+          phone
         ],
         (err1, results1, fields1) => {
           console.log(err1)

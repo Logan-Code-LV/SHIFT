@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useAuth } from "react-auth"
-import { useJobs } from "../hooks"
+import { useJobs } from "../../hooks"
 
-import "../styles/viewfreelancers.css"
+import "../../styles/viewfreelancers.css"
 
 export default props => {
   const { profile } = useAuth()
@@ -12,8 +12,8 @@ export default props => {
     <div className="jobposts">
       <h3>Your Job Posts:</h3>
       <div className="viewfreelancers">
-        {view.map(item => (
-          <div className="onejob">
+        {view.map((item, i) => (
+          <div key={"job" + i} className="onejob">
             <h4 className="jobname">{item.restname}</h4>
             <h5 className="jobdesc">Position: {item.jobdesc}</h5>
             <h5 className="jobpay">Pay: ${item.pay} an hour</h5>

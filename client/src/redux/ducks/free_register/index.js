@@ -22,7 +22,9 @@ function registerFreelancers(
   firstname,
   lastname,
   jobposition,
-  qualifications
+  qualifications,
+  email,
+  phone
 ) {
   return new Promise((resolve, reject) => {
     axios
@@ -32,7 +34,9 @@ function registerFreelancers(
         firstname,
         lastname,
         jobposition,
-        qualifications
+        qualifications,
+        email,
+        phone
       })
       .then(resp => {
         resolve(resp.data)
@@ -52,7 +56,9 @@ export function useRegisterfree() {
     firstname,
     lastname,
     jobposition,
-    qualifications
+    qualifications,
+    email,
+    phone
   ) =>
     registerFreelancers(
       username,
@@ -60,7 +66,9 @@ export function useRegisterfree() {
       firstname,
       lastname,
       jobposition,
-      qualifications
+      qualifications,
+      email,
+      phone
     )
 
   return { free }

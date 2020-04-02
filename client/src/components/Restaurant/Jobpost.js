@@ -1,25 +1,28 @@
 import React, { useState } from "react"
-import { usePost, useJobs } from "../hooks"
+import { usePost, useJobs } from "../../hooks"
 import { useAuth } from "react-auth"
 
 export default props => {
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")
+  const [job_date, setJob_date] = useState("")
+  const [deadline, setDeadline] = useState("")
   const { createJob } = usePost()
   const { profile } = useAuth()
-  const { restId } = useJobs(profile.username)
+  const { restId, get } = useJobs(profile.username)
 
   function handleSubmit(e) {
     e.preventDefault()
-    createJob({ restname, jobdesc, pay, restId })
-    // .then(resp => {
-    //   props.history.push("/Viewfreelancers")
+    createJob({ restname, jobdesc, pay, restId }).then(resp => {
+      get(restId)
+      console.log("jobcreated")
+    })
   }
 
   return (
     <div className="register">
-      <h4>Post your job below to get Your SHIFT Covered</h4>
+      <h4>Post your job to get Your SHIFT Covered</h4>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -40,6 +43,20 @@ export default props => {
           value={pay}
           onChange={e => setPay(e.target.value)}
           placeholder="Pay"
+        ></input>
+        <br></br>
+        <input
+          type="text"
+          value={setJob_date}
+          onChange={e => setJob_date(e.target.value)}
+          placeholder="What date will the shift take place?"
+        ></input>
+        <br></br>
+        <input
+          type="datetime-local"
+          value={deadline}
+          onChange={e => setDeadline(e.target.value)}
+          placeholder="What is the latest time that you need the shift to confirm the shift is covered?"
         ></input>
         <br></br>
         <button type="submit">Submit Job</button>

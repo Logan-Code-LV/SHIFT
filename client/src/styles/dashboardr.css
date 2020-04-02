@@ -77,6 +77,12 @@ a {
   width: 500px;
 }
 
+.register {
+  border: solid 1px white;
+  width: 800px;
+  margin: 0 auto;
+}
+
 .box-area {
   position: absolute;
   top: 0%;

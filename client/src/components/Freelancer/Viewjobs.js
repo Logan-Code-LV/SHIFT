@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react"
 
-import { useItems } from "../hooks"
-import { useTheJob } from "../hooks"
+import { useItems } from "../../hooks"
+import { useTheJob } from "../../hooks"
 
 export default props => {
-  const { free } = useTheJob()
+  const { free, get } = useTheJob()
   const { add } = useItems()
+
+  useEffect(() => {
+    get()
+  }, [])
 
   return (
     <div className="viewjobstitle">
