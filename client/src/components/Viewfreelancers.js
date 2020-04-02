@@ -14,9 +14,9 @@ export default props => {
       <div className="viewfreelancers">
         {view.map(item => (
           <div className="onejob">
-            <h2 className="jobname">{item.restname}</h2>
-            <h3 className="jobdesc">Position: {item.jobdesc}</h3>
-            <h3 className="jobpay">Pay: ${item.pay} an hour</h3>
+            <h4 className="jobname">{item.restname}</h4>
+            <h5 className="jobdesc">Position: {item.jobdesc}</h5>
+            <h5 className="jobpay">Pay: ${item.pay} an hour</h5>
           </div>
         ))}
       </div>

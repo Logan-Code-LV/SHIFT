@@ -1,32 +1,27 @@
 import React, { useState } from "react"
 import { usePost } from "../hooks"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 import Viewjobs from "./Viewjobs.js"
 import SelectedJobs from "./SelectedJobs.js"
 
-import "../styles/dashboardr.css"
+import "../styles/dashboardf.css"
 
 export default props => {
-
-  const [restname, setRestname] = useState("")
-  const [jobdesc, setJobdesc] = useState("")
-  const [pay, setPay] = useState("")
-  const { createJob } = usePost()
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    createJob({ restname, jobdesc, pay }).then(resp => {
-      props.history.push("/Viewfreelancers")
-    })
-  }
-
   return (
-    <div className="dashboardr">
+    <div className="dashboardf">
       <h1>Restaurant Dashboard</h1>
-      <div className="components">
+      <br />
+      <p>
+        Please select a positon below that you would be interested in working.
+        The correspondiong restaurant will be notified of your interest and will
+        contact you shortly!
+      </p>
+      <div className="dashboardfcomponents">
+        <SelectedJobs />
         <Viewjobs />
       </div>
-      <ul class="box-area">
+      <ul className="box-area">
         <li></li>
         <li></li>
         <li></li>

@@ -21,7 +21,7 @@ router.post("/register", (req, res, next) => {
         message: "username exists"
       })
     } else {
-      const insertSql = `INSERT INTO clients (username, password, salt, name, website) VALUES (?, ?, ?, ?, ?)`
+      const insertSql = `INSERT INTO clients (username, password, salt, restname, website) VALUES (?, ?, ?, ?, ?)`
 
       conn.query(
         insertSql,
