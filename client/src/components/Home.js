@@ -8,66 +8,61 @@ import Freeregister from "./Freelancer/Freeregister"
 import Freelogin from "./Freelancer/Freelogin"
 import Restlogin from "./Restaurant/Restlogin.js"
 
+import "../assets/shiftoversize.jpg"
+
 import "../styles/home.css"
 
 export default props => {
-  // const [username, setUsername] = useState("")
-  // const [password, setPassword] = useState("")
-  // const [name, setName] = useState("")
-  // const [website, setWebsite] = useState("")
-
-  // const { create } = useRegister()
-  // const { signin } = useAuth()
-
-  // function handleRegister(e) {
-  //   e.preventDefault()
-
-  //   create(username, password, name, website).then(resp => {
-  //     props.history.push("/jobpost")
-  //   })
-  // }
-
-  // function handleLogin(e) {
-  //   e.preventDefault()
-
-  //   signin(username, password).then(resp => {
-  //     props.history.push("/jobpost")
-  //   })
-  // }
-
   return (
-    <div className="container">
-      <div className="body">
-        <h1>SHIFT</h1>
-        <p>
-          SHIFT is designed to match qualified freelance workers with businesses
-          that need positions filled
-        </p>
-        <div className="logins">
-          <Freelogin props={props} />
-          <Restlogin props={props} />
+    <div className="main">
+      <div className="top">
+        <div class="mainheader">
+          <a href="#mastercontainer">Home</a>
+          <a href="#logomap">About Us</a>
+          <a href="#menu">Register</a>
+          <a href="#gallery">Login</a>
         </div>
-        <br />
-        <h6> New here? - Sign up below </h6>
-        <div className="header">
-          <h5>
-            <Link to="/freeregister">Registration (Freelance Workers)</Link>
-          </h5>
-          <h5>
-            <Link to="/restregister">Registration (Restaurants)</Link>
-          </h5>
+        <div className="container">
+          <div className="body">
+            <h1 className="logo">SHIFT</h1>
+            <p>
+              SHIFT is designed to match qualified freelance workers with
+              businesses that need them.
+            </p>
+            <div className="logins">
+              <Freelogin props={props} />
+              <Restlogin props={props} />
+            </div>
+            <br />
+            <h6 className="registerspot"> New here? - Sign up below </h6>
+            <div className="registerarea">
+              <h5>
+                <Link to="/freeregister">Registration (Freelance Workers)</Link>
+              </h5>
+              <h5>
+                <Link to="/restregister">Registration (Restaurants)</Link>
+              </h5>
+            </div>
+          </div>
         </div>
+        <ul className="box-area">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
-      <ul className="box-area">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      {/* <div className="backgroundimage">
+        <img
+          className="img-responsive"
+          src="../assets/shiftoversize.jpg.jpg"
+          alt="logo"
+        />
+      </div> */}
     </div>
   )
 }

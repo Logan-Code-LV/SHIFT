@@ -1,6 +1,11 @@
-body {
-  background-color: grey;
-  background: linear-gradient(to left, #084177, #687466, #cd8d7b, #fbc490);
+.logo {
+  font-family: "Lobster", cursive;
+  font-size: 280px;
+}
+
+.registerspot {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
 }
 
 .container {
@@ -20,12 +25,51 @@ h1 {
 h2,
 h3,
 h4,
-h5,
-h6 {
-  font-family: "Open Sans", sans-serif;
+h5 {
+  font-family: "Oswald", sans-serif;
 }
 
-.header {
+.register h4 {
+  font-size: 28px;
+}
+
+.mainheader {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.mainheader a {
+  width: 75px;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+  position: relative;
+  z-index: 1000;
+  text-align: center;
+}
+
+.backgroundimage {
+  background-image: url("../assets/mainpic.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 900px;
+  position: absolute;
+  z-index: 10000000000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.registerarea {
   display: flex;
   justify-content: space-evenly;
   width: 600px;
@@ -44,7 +88,7 @@ h6 {
 }
 
 button {
-  width: 80px;
+  width: 180px;
   background-color: #4caf50;
   color: white;
   padding: 14px 20px;
@@ -52,6 +96,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .logins {

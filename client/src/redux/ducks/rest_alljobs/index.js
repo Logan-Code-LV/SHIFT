@@ -45,7 +45,7 @@ export function useJobs(username) {
   const dispatch = useDispatch()
   //const viewpost = (restname, jobdesc, pay) => getJobs(restname, jobdesc, pay)
   const view = useSelector(appState => appState.viewpostState.viewjobs)
-  //const getId = username => dispatch(getUserId(username))
+  const getId = username => dispatch(getUserId(username))
   const restId = useSelector(appState => appState.viewpostState.rest_id)
   const get = restId => dispatch(getJobs(restId))
   useEffect(() => {

@@ -20,7 +20,9 @@ export default props => {
             <h3 className="jobname">{item.restname}</h3>
             <h5 className="jobdesc">{item.jobdesc}</h5>
             <h5 className="jobpay">{item.pay}</h5>
-            <button onClick={e => add(item)}>Interested</button>
+            <button className="dashboardfbutton" onClick={e => add(item)}>
+              Interested
+            </button>
           </div>
         ))}
       </div>
