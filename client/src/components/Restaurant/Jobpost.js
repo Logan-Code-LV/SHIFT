@@ -6,7 +6,7 @@ export default props => {
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")
-  const [job_date, setJob_date] = useState("")
+  const [jobdate, setJobdate] = useState("")
   const [deadline, setDeadline] = useState("")
   const { createJob } = usePost()
   const { profile } = useAuth()
@@ -22,7 +22,7 @@ export default props => {
 
   return (
     <div className="register">
-      <h4>Post your job to get Your SHIFT Covered</h4>
+      <h4>Get your SHIFT covered below</h4>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -47,8 +47,8 @@ export default props => {
         <br></br>
         <input
           type="text"
-          value={setJob_date}
-          onChange={e => setJob_date(e.target.value)}
+          value={jobdate}
+          onChange={e => setJobdate(e.target.value)}
           placeholder="What date will the shift take place?"
         ></input>
         <br></br>

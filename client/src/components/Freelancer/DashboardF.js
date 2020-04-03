@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { usePost } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { useJobs } from "../../hooks"
+import { useAuth } from "react-auth"
 
 import Viewjobs from "./Viewjobs.js"
 import SelectedJobs from "./SelectedJobs.js"
@@ -8,18 +10,21 @@ import SelectedJobs from "./SelectedJobs.js"
 import "../../styles/dashboardf.css"
 
 export default props => {
+  const { profile } = useAuth()
+  const { viewpost, view, getId } = useJobs(profile.username)
+
   return (
     <div className="dashboardf">
-      <h1>Restaurant Dashboard</h1>
+      <h1>Freelance Dashboard</h1>
       <br />
       <p>
         Please select a positon below that you would be interested in working.
-        The correspondiong restaurant will be notified of your interest and will
-        contact you shortly!
+        SHIFT will notify the restaurant of your availability and will message
+        you soon.
       </p>
       <div className="dashboardfcomponents">
-        <SelectedJobs props={props} />
         <Viewjobs props={props} />
+        <SelectedJobs props={props} />
       </div>
       <ul className="box-area">
         <li></li>

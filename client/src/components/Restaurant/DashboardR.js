@@ -5,18 +5,18 @@ import { usePost } from "../../hooks"
 import Jobpost from "./Jobpost"
 import Viewfreelancers from "./Viewfreelancers"
 
-import "../../styles/dashboardr.css"
+// import "../../styles/dashboardr.css"
 
 export default props => {
   return (
-    <div className="dashboardr">
+    <div>
       <h1>Restaurant Dashboard</h1>
       <div className="dashboardrcomponents">
-        <div className="freelancers">
-          <Viewfreelancers props={props} />
-        </div>
         <div className="jobpost">
           <Jobpost props={props} />
+        </div>
+        <div className="freelancers">
+          <Viewfreelancers props={props} />
         </div>
       </div>
       <ul className="box-area">

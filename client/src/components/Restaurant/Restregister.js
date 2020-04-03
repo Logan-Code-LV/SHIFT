@@ -46,7 +46,7 @@ export default props => {
         ></input>
         <br></br>
         <input
-          type="url"
+          type="text"
           value={website}
           onChange={e => setWebsite(e.target.value)}
           placeholder="Website"
