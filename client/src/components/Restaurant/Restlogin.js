@@ -11,11 +11,7 @@ export default props => {
     e.preventDefault()
 
     signin(username, password).then(resp => {
-<<<<<<< HEAD:client/src/components/Restlogin.js
-      props.props.history.push("/jobpost")
-=======
       props.props.history.push("/dashboardr")
->>>>>>> master:client/src/components/Restaurant/Restlogin.js
     })
   }
 

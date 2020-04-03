@@ -10,11 +10,7 @@ export default props => {
   function handleLogin(e) {
     e.preventDefault()
 
-<<<<<<< HEAD:client/src/components/Freelogin.js
-    signin(username, password).then(resp => {
-=======
     signinFree(username, password).then(resp => {
->>>>>>> master:client/src/components/Freelancer/Freelogin.js
       props.props.history.push("/dashboardf")
     })
   }

@@ -2,19 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { AuthProvider } from "../lib/react-auth-new.js"
 
-<<<<<<< HEAD
-import Freeregister from "./Freeregister"
-import Restregister from "./Restregister"
-import RProfile from "./RProfile"
-import Restlogin from "./Restlogin"
-import Viewfreelancers from "./Viewfreelancers.js"
-import Jobpost from "./Jobpost.js"
-import FProfile from "./FProfile"
-import Viewjobs from "./Viewjobs"
-import Interestedfree from "./Interestedfree"
-=======
 import Home from "./Home.js"
->>>>>>> master
 
 import DashboardR from "./Restaurant/DashboardR.js"
 import DashboardF from "./Freelancer/DashboardF.js"
@@ -31,6 +19,7 @@ import FProfile from "./Freelancer/FProfile"
 import Viewfreelancers from "./Restaurant/Viewfreelancers.js"
 import Jobpost from "./Restaurant/Jobpost.js"
 import Viewjobs from "./Freelancer/Viewjobs"
+import Interestedfree from "./Interestedfree"
 
 export default props => {
   return (
