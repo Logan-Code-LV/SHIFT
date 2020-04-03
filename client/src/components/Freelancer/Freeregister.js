@@ -30,7 +30,7 @@ export default props => {
       email,
       phone
     ).then(resp => {
-      props.history.push("/dashboardf")
+      props.history.push("/")
     })
   }
   return (

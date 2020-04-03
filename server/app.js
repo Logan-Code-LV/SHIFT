@@ -7,7 +7,7 @@ const viewjobpostsRoutes = require("./routes/rest_make_jobpost")
 const restaurantprofileRoutes = require("./routes/restaurantprofile")
 const freelancerprofileRoutes = require("./routes/freelancerprofile")
 const viewjobsRoutes = require("./routes/free_alljobs")
-const interestedFreeRoutes = require("./routes/interestedfree.js")
+const interestedfreeRoutes = require("./routes/interestedfree")
 const expressjwt = require("express-jwt")
 const config = require("config")
 

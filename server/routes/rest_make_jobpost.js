@@ -9,7 +9,8 @@ router.post("/jobpost", (req, res, next) => {
   const id = req.body.restId
   const deadline = req.body.deadline
 
-  const insertSql = `INSERT INTO jobpost (restname, jobdesc, pay, client_id, deadline) VALUES (?, ?, ?, ?, ?)`
+  const insertSql = `INSERT INTO jobpost (restname, jobdesc, pay, client_id, deadline) 
+  VALUES (?, ?, ?, ?, ?)`
 
   conn.query(
     insertSql,
@@ -18,6 +19,7 @@ router.post("/jobpost", (req, res, next) => {
       res.json({
         message: "job added successfully!"
       })
+      console.log(results)
     }
   )
 })
