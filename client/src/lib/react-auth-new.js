@@ -20,7 +20,7 @@ class AuthService {
   }
 
   loginFree(username, password) {
-    return this.post("loginfree", { username, password })
+    return this.post("/loginfree", { username, password })
       .then(resp => {
         this.setToken(resp.token)
         return Promise.resolve(resp)

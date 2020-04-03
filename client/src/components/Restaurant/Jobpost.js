@@ -6,7 +6,7 @@ export default props => {
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")
-  const [jobdate, setJobdate] = useState("")
+  // const [job_date, setJob_date] = useState("")
   const [deadline, setDeadline] = useState("")
   const { createJob } = usePost()
   const { profile } = useAuth()
@@ -14,11 +14,11 @@ export default props => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    createJob({ restname, jobdesc, pay, restId }).then(resp => {
+    createJob({ restname, jobdesc, pay, restId, deadline }).then(resp => {
       get(restId)
-      console.log("jobcreated")
     })
   }
+  console.log(restId)
 
   return (
     <div className="register">
@@ -44,13 +44,13 @@ export default props => {
           onChange={e => setPay(e.target.value)}
           placeholder="Pay"
         ></input>
-        <br></br>
+        {/* <br></br>
         <input
           type="text"
-          value={jobdate}
-          onChange={e => setJobdate(e.target.value)}
+          value={job_date}
+          onChange={e => setJob_date(e.target.value)}
           placeholder="What date will the shift take place?"
-        ></input>
+        ></input> */}
         <br></br>
         <input
           type="datetime-local"
