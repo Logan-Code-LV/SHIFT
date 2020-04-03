@@ -7,3 +7,4 @@ export { useProfilefree } from "../redux/ducks/fprofile/index"
 //Logan working on the shopping cart like feature for when Freelancers select "interested" in a job
 export { useItems } from "../redux/ducks/cart/index.js"
 export { useTheJob } from "../redux/ducks/free_alljobs/index"
+export { useAllInterested } from "../redux/ducks/interestedfree/index"

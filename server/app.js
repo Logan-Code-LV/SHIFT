@@ -22,6 +22,7 @@ app.use("/api", viewjobpostsRoutes)
 app.use("/api", restaurantprofileRoutes)
 app.use("/api", freelancerprofileRoutes)
 app.use("/api", viewjobsRoutes)
+app.use("/api", interestedfreeRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
 app.use(function(req, res, next) {
