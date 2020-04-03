@@ -33,8 +33,8 @@ export default props => {
           that need positions filled
         </p>
         <div className="logins">
-          <Freelogin />
-          <Restlogin />
+          <Freelogin props={props} />
+          <Restlogin props={props} />
         </div>
         <br />
         <h6> New here? - Sign up below </h6>

@@ -9,6 +9,7 @@ const freelancerprofileRoutes = require("./routes/freelancerprofile")
 const expressjwt = require("express-jwt")
 const config = require("config")
 const viewjobsRoutes = require("./routes/viewjobs")
+const interestedfreeRoutes = require("./routes/interestedfree")
 
 const app = express()
 const port = 3001
@@ -22,6 +23,7 @@ app.use("/api", viewjobpostsRoutes)
 app.use("/api", restaurantprofileRoutes)
 app.use("/api", freelancerprofileRoutes)
 app.use("/api", viewjobsRoutes)
+app.use("/api", interestedfreeRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
 app.use(function(req, res, next) {

@@ -24,7 +24,8 @@ router.post("/registerfree", (req, res, next) => {
         message: "username exists"
       })
     } else {
-      const insertSql = `INSERT INTO freelancers (username, password, salt, firstname, lastname, jobposition, qualifications) VALUES (?, ?, ?, ?, ?, ?, ?)`
+      const insertSql = `INSERT INTO freelancers (username, password, salt, firstname, lastname, jobposition, qualifications) 
+      VALUES (?, ?, ?, ?, ?, ?, ?)`
 
       conn.query(
         insertSql,
