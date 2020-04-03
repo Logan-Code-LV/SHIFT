@@ -7,6 +7,7 @@ const viewjobpostsRoutes = require("./routes/rest_make_jobpost")
 const restaurantprofileRoutes = require("./routes/restaurantprofile")
 const freelancerprofileRoutes = require("./routes/freelancerprofile")
 const viewjobsRoutes = require("./routes/free_alljobs")
+const interestedFreeRoutes = require("./routes/interestedfree.js")
 const expressjwt = require("express-jwt")
 const config = require("config")
 
@@ -22,7 +23,7 @@ app.use("/api", viewjobpostsRoutes)
 app.use("/api", restaurantprofileRoutes)
 app.use("/api", freelancerprofileRoutes)
 app.use("/api", viewjobsRoutes)
-app.use("/api", interestedfreeRoutes)
+app.use("/api", interestedFreeRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
 app.use(function(req, res, next) {
@@ -30,6 +31,7 @@ app.use(function(req, res, next) {
 })
 
 app.use(function(err, req, res, next) {
+  console.log(err)
   res.locals.message = err.message
   res.locals.error = req.app.get("env") === "development" ? err : {}
 })
@@ -42,6 +44,7 @@ app.use(function(req, res, next) {
   next(createError(404))
 })
 app.use(function(err, req, res, next) {
+  console.log(err)
   res.locals.message = err.message
   res.locals.error = req.app.get("env") === "development" ? err : {}
   res.status(err.status || 500)

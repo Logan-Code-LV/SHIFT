@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { usePost } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { useJobs } from "../../hooks"
-import { useAuth } from "react-auth"
+import { useAuth } from "../../lib/react-auth-new.js"
 
 import Viewjobs from "./Viewjobs.js"
 import SelectedJobs from "./SelectedJobs.js"

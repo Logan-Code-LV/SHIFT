@@ -4,6 +4,8 @@ import { useEffect } from "react"
 
 const VIEWJOBPOSTS = "jobpost/VIEWJOBPOSTS"
 const GETID = "jobpost/GETID"
+const INTERESTED = "jobpost/INTERESTED"
+
 const initialState = {
   viewjobs: [],
   rest_id: ""
@@ -32,8 +34,10 @@ function getJobs(restID) {
   }
 }
 function getUserId(username) {
+  console.log(username)
   return dispatch => {
     axios.get("/api/getid/" + username).then(resp => {
+      console.log("data", resp.data)
       dispatch({
         type: GETID,
         payload: resp.data
@@ -41,16 +45,33 @@ function getUserId(username) {
     })
   }
 }
+
+function updateFreelancerInterest(IDs) {
+  console.log(IDs)
+  return dispatch => {
+    axios.post("/api/interestedfree", IDs).then(resp => {
+      dispatch({
+        type: INTERESTED,
+        payload: resp.data
+      })
+    })
+  }
+}
+
 export function useJobs(username) {
   const dispatch = useDispatch()
-  //const viewpost = (restname, jobdesc, pay) => getJobs(restname, jobdesc, pay)
   const view = useSelector(appState => appState.viewpostState.viewjobs)
   const getId = username => dispatch(getUserId(username))
-  const restId = useSelector(appState => appState.viewpostState.rest_id)
+  const restId = useSelector(appState => appState.viewpostState.restId)
   const get = restId => dispatch(getJobs(restId))
+  const updateInterest = IDs => dispatch(updateFreelancerInterest(IDs))
+
+  console.log("username", username)
+
   useEffect(() => {
     dispatch(getUserId(username))
     dispatch(getJobs(restId))
   }, [dispatch, restId])
-  return { view, restId, get }
+
+  return { view, restId, get, updateInterest }
 }

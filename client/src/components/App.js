@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
+import { useAuth } from "../lib/react-auth-new.js"
 import { AuthProvider } from "../lib/react-auth-new.js"
 
 import Home from "./Home.js"
