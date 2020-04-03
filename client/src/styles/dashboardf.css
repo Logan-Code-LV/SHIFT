@@ -3,6 +3,12 @@ body {
   background: linear-gradient(to left, #084177, #687466, #cd8d7b, #fbc490);
 }
 
+#homebutton {
+  display: absolute;
+  widows: 100px;
+  margin: 0 auto;
+}
+
 .container {
   width: 1000px;
   margin: 0 auto;
@@ -17,21 +23,13 @@ h1 {
   font-family: "Lobster", cursive;
 }
 
+p,
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: "Open Sans", sans-serif;
-}
-
-.header {
-  display: flex;
-  justify-content: space-evenly;
-  width: 600px;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
 }
 
 .body {
@@ -52,26 +50,75 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.logins {
-  display: flex;
-}
-
-a {
-  width: 80px;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 12px;
-  margin-left: 5px;
   position: relative;
   z-index: 1000;
+}
+
+.viewjobstitle {
+  text-align: center;
+  color: white;
+  width: 1000px;
+}
+
+.dashboardfcomponents {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.viewjobscomponent {
+  border: solid white 1px;
+  text-align: center;
+  width: 1000px;
+  grid-gap: 15px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.viewjobscomponent div {
+  border: 1px solid white;
+  text-transform: capitalize;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+}
+
+.cart {
+  text-align: center;
+  color: white;
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cartitem {
+  border: 1px solid white;
+  text-transform: capitalize;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+  height: 225px;
+}
+
+.cart div {
+  width: 200px;
+}
+
+.carttitle {
+  text-align: center;
+  color: white;
+  width: 1000px;
+}
+
+.dashboardf p {
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
 .box-area {

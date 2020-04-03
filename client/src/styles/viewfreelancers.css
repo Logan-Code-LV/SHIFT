@@ -25,13 +25,49 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-.header {
+.dashboardrcomponents {
   display: flex;
-  justify-content: space-evenly;
-  width: 600px;
+  flex-direction: column;
+}
+
+.jobposts h3,
+.jobposts h4,
+.jobposts h5 {
+  text-align: center;
+  color: white;
+}
+
+.viewfreelancers {
+  text-align: center;
+  width: 800px;
+  grid-gap: 15px;
+  display: flex;
   margin: 0 auto;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.onejob {
+  border: solid white 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 0 auto;
+  width: 130px;
+  height: 165px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.jobname {
   background-color: rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
+  text-transform: capitalize;
+  color: white;
+}
+
+.jobdesc {
+  text-transform: capitalize;
 }
 
 .body {
@@ -43,6 +79,13 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
+.components {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: 0 auto;
+}
+
 button {
   width: 80px;
   background-color: #4caf50;
@@ -52,10 +95,6 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.logins {
-  display: flex;
 }
 
 a {

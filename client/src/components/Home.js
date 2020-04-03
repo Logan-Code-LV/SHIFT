@@ -1,29 +1,40 @@
 import React, { useState } from "react"
 import { useRegister } from "../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { useAuth } from "../lib/react-auth-new.js"
 
-import Restregister from "./Restregister"
-import Freeregister from "./Freeregister"
-import Freelogin from "./Freelogin"
-import Restlogin from "./Restlogin.js"
+import Restregister from "./Restaurant/Restregister.js"
+import Freeregister from "./Freelancer/Freeregister"
+import Freelogin from "./Freelancer/Freelogin"
+import Restlogin from "./Restaurant/Restlogin.js"
 
 import "../styles/home.css"
 
 export default props => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [name, setName] = useState("")
-  const [website, setWebsite] = useState("")
+  // const [username, setUsername] = useState("")
+  // const [password, setPassword] = useState("")
+  // const [name, setName] = useState("")
+  // const [website, setWebsite] = useState("")
 
-  const { create } = useRegister()
+  // const { create } = useRegister()
+  // const { signin } = useAuth()
 
-  function handleRegister(e) {
-    e.preventDefault()
+  // function handleRegister(e) {
+  //   e.preventDefault()
 
-    create(username, password, name, website).then(resp => {
-      props.history.push("/jobpost")
-    })
-  }
+  //   create(username, password, name, website).then(resp => {
+  //     props.history.push("/jobpost")
+  //   })
+  // }
+
+  // function handleLogin(e) {
+  //   e.preventDefault()
+
+  //   signin(username, password).then(resp => {
+  //     props.history.push("/jobpost")
+  //   })
+  // }
+
   return (
     <div className="container">
       <div className="body">
@@ -38,7 +49,7 @@ export default props => {
         </div>
         <br />
         <h6> New here? - Sign up below </h6>
-        <div class="header">
+        <div className="header">
           <h5>
             <Link to="/freeregister">Registration (Freelance Workers)</Link>
           </h5>
@@ -47,7 +58,7 @@ export default props => {
           </h5>
         </div>
       </div>
-      <ul class="box-area">
+      <ul className="box-area">
         <li></li>
         <li></li>
         <li></li>
