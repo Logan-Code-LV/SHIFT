@@ -5,7 +5,7 @@ import { useEffect } from "react"
 const GET_JOBS = "jobpost/GET_JOBS"
 
 const initialState = {
-  jobs: []
+  jobs: [],
 }
 
 export default (state = initialState, action) => {
@@ -18,13 +18,12 @@ export default (state = initialState, action) => {
 }
 
 function getTheJob() {
-  return dispatch => {
-    axios.get("/api/viewjobs").then(resp => {
+  return (dispatch) => {
+    axios.get("/api/viewjobs").then((resp) => {
       const data = resp.data
-      console.log(data)
       dispatch({
         type: GET_JOBS,
-        payload: data
+        payload: data,
       })
     })
   }
@@ -32,7 +31,7 @@ function getTheJob() {
 
 export function useTheJob() {
   const dispatch = useDispatch()
-  const free = useSelector(appState => appState.thejobState.jobs)
+  const free = useSelector((appState) => appState.thejobState.jobs)
   const get = () => dispatch(getTheJob())
 
   return { free, get }

@@ -17,7 +17,8 @@ router.get("/jobpost/:restid", (req, res, next) => {
 router.get("/getid/:username", (req, res, next) => {
   const username = req.params.username
   const sql = `Select id FROM shift.clients WHERE username = ?;`
-  console.log(username, "username")
+  console.log(username, id, "username")
+
   conn.query(sql, [username], (err, results, fields) => {
     res.json(results[0].id)
   })
