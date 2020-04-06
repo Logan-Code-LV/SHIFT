@@ -3,7 +3,7 @@ import { useRegisterfree } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import "../../styles/register.css"
 
-export default props => {
+export default (props) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [firstname, setFirstname] = useState("")
@@ -29,8 +29,8 @@ export default props => {
       qualifications,
       email,
       phone
-    ).then(resp => {
-      props.history.push("/dashboardf")
+    ).then((resp) => {
+      props.history.push("/")
     })
   }
   return (
@@ -40,56 +40,56 @@ export default props => {
         <input
           type="text"
           value={username}
-          onChange={e => setUsername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
         />{" "}
         <br></br>
         <input
           type="password"
           value={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
         <br></br>
         <input
           type="text"
           value={firstname}
-          onChange={e => setFirstname(e.target.value)}
+          onChange={(e) => setFirstname(e.target.value)}
           placeholder="First Name"
         ></input>
         <br></br>
         <input
           type="text"
           value={lastname}
-          onChange={e => setLastname(e.target.value)}
+          onChange={(e) => setLastname(e.target.value)}
           placeholder="Last Name"
         ></input>
         <br></br>
         <input
           type="text"
           value={jobposition}
-          onChange={e => setJobposition(e.target.value)}
+          onChange={(e) => setJobposition(e.target.value)}
           placeholder="Desired job position"
         ></input>
         <br></br>
         <input
           type="text"
           value={qualifications}
-          onChange={e => setQualifications(e.target.value)}
+          onChange={(e) => setQualifications(e.target.value)}
           placeholder="Tell us about your qualifications..."
         ></input>
         <br></br>
         <input
           type="email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
         ></input>
         <br></br>
         <input
           type="text"
           value={phone}
-          onChange={e => setPhone(e.target.value)}
+          onChange={(e) => setPhone(e.target.value)}
           placeholder="Enter your phone number"
         ></input>
         <br></br>

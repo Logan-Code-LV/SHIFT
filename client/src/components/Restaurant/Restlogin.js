@@ -5,21 +5,13 @@ export default (props) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  const { signin, signout } = useAuth()
+  const { signin } = useAuth()
 
   function handleLogin(e) {
     e.preventDefault()
 
     signin(username, password).then((resp) => {
       props.props.history.push("/dashboardr")
-    })
-  }
-
-  function handleLogout(e) {
-    e.preventDefault()
-
-    signout().then((resp) => {
-      props.history.push("/")
     })
   }
 
@@ -45,11 +37,6 @@ export default (props) => {
         </div>
         <button type="submit">Login</button>
       </form>
-      <div>
-        <form onSubmit={handleLogout}>
-          <button type="submit">Logout</button>
-        </form>
-      </div>
       <ul className="box-area">
         <li></li>
         <li></li>

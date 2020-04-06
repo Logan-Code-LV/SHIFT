@@ -24,11 +24,11 @@ app.use("/api", freelancerprofileRoutes)
 app.use("/api", viewjobsRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404))
 })
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.locals.message = err.message
   res.locals.error = req.app.get("env") === "development" ? err : {}
 })
@@ -37,16 +37,17 @@ app.use("/api", clientsRoutes)
 app.use("/api", freelancersRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404))
 })
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
+  console.log(err)
   res.locals.message = err.message
   res.locals.error = req.app.get("env") === "development" ? err : {}
   res.status(err.status || 500)
   res.json({
     status: err.status,
-    error: err
+    error: err,
   })
 })
 
