@@ -9,9 +9,17 @@ import SelectedJobs from "./SelectedJobs.js"
 
 import "../../styles/dashboardf.css"
 
-export default props => {
-  const { profile } = useAuth()
+export default (props) => {
+  const { profile, signout } = useAuth()
   const { viewpost, view, getId } = useJobs(profile.username)
+
+  function handleLogout(e) {
+    e.preventDefault()
+
+    signout().then((resp) => {
+      props.history.push("/")
+    })
+  }
 
   return (
     <div className="dashboardf">
@@ -25,6 +33,11 @@ export default props => {
       <div className="dashboardfcomponents">
         <Viewjobs props={props} />
         <SelectedJobs props={props} />
+      </div>
+      <div>
+        <form onSubmit={handleLogout}>
+          <button type="submit">Logout</button>
+        </form>
       </div>
       <ul className="box-area">
         <li></li>
