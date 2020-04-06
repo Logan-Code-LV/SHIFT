@@ -18,13 +18,12 @@ export default (state = initialState, action) => {
 }
 
 function getInterested() {
-  return dispatch => {
-    axios.get("/api/interestedfree").then(resp => {
+  return (dispatch) => {
+    axios.get("/api/interestedfree").then((resp) => {
       const data = resp.data
-      console.log(data)
       dispatch({
         type: GET_FREE,
-        payload: data
+        payload: data,
       })
     })
   }
@@ -33,6 +32,7 @@ function getInterested() {
 export function useAllInterested() {
   const dispatch = useDispatch()
   const select = useSelector(appState => appState.interestedState.interested)
+  
   useEffect(() => {
     dispatch(getInterested())
   }, [dispatch])

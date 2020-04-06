@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { usePost } from "../../hooks"
-import { useAuth } from "react-auth"
+import { useAuth } from "../../lib/react-auth-new.js"
 
 import Jobpost from "./Jobpost"
 import Viewfreelancers from "./Viewfreelancers"
@@ -10,6 +10,15 @@ import Viewfreelancers from "./Viewfreelancers"
 
 export default props => {
   const { signout } = useAuth()
+
+  function handleLogout(e) {
+    e.preventDefault()
+
+    signout().then(resp => {
+      props.history.push("/")
+    })
+  }
+
   return (
     <div>
       <h1>Restaurant Dashboard</h1>
@@ -21,6 +30,11 @@ export default props => {
         <div className="freelancers">
           <Viewfreelancers props={props} />
         </div>
+      </div>
+      <div>
+        <form onSubmit={handleLogout}>
+          <button type="submit">Logout</button>
+        </form>
       </div>
       <ul className="box-area">
         <li></li>
