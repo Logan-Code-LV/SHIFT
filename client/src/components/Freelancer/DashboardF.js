@@ -11,7 +11,10 @@ import "../../styles/dashboardf.css"
 
 export default (props) => {
   const { profile, signout } = useAuth()
+
   const { viewpost, view, getId } = useJobs(profile.username)
+  function handleLogout(e) {
+    e.preventDefault()
 
   function handleLogout(e) {
     e.preventDefault()
@@ -30,6 +33,7 @@ export default (props) => {
         SHIFT will notify the restaurant of your availability and will message
         you soon.
       </p>
+      <button onSubmit={handleLogout}>Logout</button>
       <div className="dashboardfcomponents">
         <Viewjobs props={props} />
         <SelectedJobs props={props} />

@@ -14,6 +14,13 @@ export default (props) => {
       props.props.history.push("/dashboardf")
     })
   }
+  function handleLogout(e) {
+    e.preventDefault()
+
+    signout(username, password).then(resp => {
+      props.props.history.push("/")
+    })
+  }
 
   function handleLogout(e) {
     e.preventDefault()
@@ -44,6 +51,9 @@ export default (props) => {
           />
         </div>
         <button type="submit">Login</button>
+        <button onSubmit={handleLogout} type="submit">
+          Logout
+        </button>
       </form>
       <div>
         <form onSubmit={handleLogout}>
