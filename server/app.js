@@ -7,7 +7,7 @@ const viewjobpostsRoutes = require("./routes/rest_make_jobpost")
 const restaurantprofileRoutes = require("./routes/restaurantprofile")
 const freelancerprofileRoutes = require("./routes/freelancerprofile")
 const viewjobsRoutes = require("./routes/free_alljobs")
-const interestedfreeRoutes = require("./routes/interestedfree")
+const interestedFreeRoutes = require("./routes/interestedfree")
 const expressjwt = require("express-jwt")
 const config = require("config")
 
@@ -26,11 +26,11 @@ app.use("/api", viewjobsRoutes)
 app.use("/api", interestedFreeRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404))
 })
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   console.log(err)
   res.locals.message = err.message
   res.locals.error = req.app.get("env") === "development" ? err : {}
@@ -40,17 +40,17 @@ app.use("/api", clientsRoutes)
 app.use("/api", freelancersRoutes)
 app.use("/api", expressjwt({ secret: config.get("secret") }), protectedRoutes)
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404))
 })
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   console.log(err)
   res.locals.message = err.message
   res.locals.error = req.app.get("env") === "development" ? err : {}
   res.status(err.status || 500)
   res.json({
     status: err.status,
-    error: err
+    error: err,
   })
 })
 
