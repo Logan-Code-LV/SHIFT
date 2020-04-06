@@ -14,13 +14,13 @@ export default props => {
       props.props.history.push("/dashboardf")
     })
   }
-  function handleLogout(e) {
-    e.preventDefault()
+  // function handleLogout(e) {
+  //   e.preventDefault()
 
-    signout(username, password).then(resp => {
-      props.props.history.push("/")
-    })
-  }
+  //   signout(username, password).then(resp => {
+  //     props.props.history.push("/")
+  //   })
+  // }
 
   return (
     <div className="wrapper">
@@ -43,10 +43,8 @@ export default props => {
           />
         </div>
         <button type="submit">Login</button>
-        <button onSubmit={handleLogout} type="submit">
-          Logout
-        </button>
       </form>
+      <button onClick={e => signout()}>Logout</button>
       <ul className="box-area">
         <li></li>
         <li></li>

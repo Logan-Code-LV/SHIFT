@@ -10,16 +10,16 @@ import SelectedJobs from "./SelectedJobs.js"
 import "../../styles/dashboardf.css"
 
 export default props => {
-  const { profile, signout, username, password } = useAuth()
+  const { profile, signout } = useAuth()
   const { viewpost, view, getId } = useJobs(profile.username)
-  function handleLogout(e) {
-    e.preventDefault()
+  // function handleLogout(e) {
+  //   e.preventDefault()
 
-    signout(username, password).then(resp => {
-      props.props.history.push("/")
-      console.log(signout)
-    })
-  }
+  // //   signout(username, password).then(resp => {
+  // //     props.props.history.push("/")
+  // //     console.log(signout)
+  // //   })
+  // // }
   return (
     <div className="dashboardf">
       <h1>Freelance Dashboard</h1>
@@ -29,7 +29,7 @@ export default props => {
         SHIFT will notify the restaurant of your availability and will message
         you soon.
       </p>
-      <button onSubmit={handleLogout}>Logout</button>
+      <button onClick={e => signout()}>Logout</button>
       <div className="dashboardfcomponents">
         <Viewjobs props={props} />
         <SelectedJobs props={props} />
