@@ -1,6 +1,6 @@
 {
   "db": {
-    "host": "localhost",
+    "host": "shift.ct0eufhavqk8.us-east-2.rds.amazonaws.com",
     "user": "shift",
     "password": "shift123!",
     "database": "shift"
