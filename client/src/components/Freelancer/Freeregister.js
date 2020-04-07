@@ -96,7 +96,7 @@ export default (props) => {
         <button type="submit">Register</button>
         <Link to="/freelogin"> Login </Link>
       </form>
-      <ul class="box-area">
+      <ul className="box-area">
         <li></li>
         <li></li>
         <li></li>

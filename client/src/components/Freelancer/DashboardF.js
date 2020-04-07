@@ -11,10 +11,11 @@ import "../../styles/dashboardf.css"
 
 export default (props) => {
   const { profile, signout } = useAuth()
-
   const { viewpost, view, getId } = useJobs(profile.username)
+
   function handleLogout(e) {
     e.preventDefault()
+  }
 
   function handleLogout(e) {
     e.preventDefault()

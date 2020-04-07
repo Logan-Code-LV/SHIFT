@@ -5,7 +5,7 @@ export default (props) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  const { signinFree } = useAuth()
+  const { signinFree, signout } = useAuth()
 
   function handleLogin(e) {
     e.preventDefault()
@@ -17,7 +17,7 @@ export default (props) => {
   function handleLogout(e) {
     e.preventDefault()
 
-    signout(username, password).then(resp => {
+    signout(username, password).then((resp) => {
       props.props.history.push("/")
     })
   }

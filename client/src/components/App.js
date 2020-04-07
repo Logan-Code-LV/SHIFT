@@ -21,7 +21,7 @@ import Jobpost from "./Restaurant/Jobpost.js"
 import Viewjobs from "./Freelancer/Viewjobs"
 import Interestedfree from "./Interestedfree"
 
-export default props => {
+export default (props) => {
   return (
     <AuthProvider>
       <Router>
