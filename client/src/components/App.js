@@ -19,6 +19,7 @@ import FProfile from "./Freelancer/FProfile"
 import Viewfreelancers from "./Restaurant/Viewfreelancers.js"
 import Jobpost from "./Restaurant/Jobpost.js"
 import Viewjobs from "./Freelancer/Viewjobs"
+import Interestedfree from "./Interestedfree"
 
 export default props => {
   return (
@@ -40,6 +41,7 @@ export default props => {
           <Route exact path="/jobpost" component={Jobpost} />
           <Route exact path="/Viewfreelancers" component={Viewfreelancers} />
           <Route exact path="/viewjobs" component={Viewjobs} />
+          <Route exact path="interestedfree" component={Interestedfree} />
         </div>
       </Router>
     </AuthProvider>

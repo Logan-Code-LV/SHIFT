@@ -20,6 +20,7 @@ export default (props) => {
     //   // get(restId)
     //   console.log(restname)
   }
+  console.log(restId)
 
   return (
     <div className="register">
@@ -45,6 +46,13 @@ export default (props) => {
           onChange={(e) => setPay(e.target.value)}
           placeholder="Pay"
         ></input>
+        {/* <br></br>
+        <input
+          type="text"
+          value={job_date}
+          onChange={e => setJob_date(e.target.value)}
+          placeholder="What date will the shift take place?"
+        ></input> */}
         <br></br>
         <input
           type="datetime-local"

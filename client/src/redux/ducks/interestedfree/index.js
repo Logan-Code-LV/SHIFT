@@ -5,7 +5,7 @@ import { useEffect } from "react"
 const GET_FREE = "interestedfree/GET_FREE"
 
 const initialState = {
-  interested: [],
+  interested: []
 }
 
 export default (state = initialState, action) => {
@@ -31,7 +31,8 @@ function getInterested() {
 
 export function useAllInterested() {
   const dispatch = useDispatch()
-  const select = useSelector((appState) => appState.interestedState.interested)
+  const select = useSelector(appState => appState.interestedState.interested)
+  
   useEffect(() => {
     dispatch(getInterested())
   }, [dispatch])
