@@ -13,8 +13,8 @@ router.get("/interestedfree", (req, res, next) => {
   })
   console.log(results)
 })
-// router.post("/interestedfree", (req, res, next) => {
-//   const insertSQL = `INSERT INTO linktable (id_job, id_free) VALUES (?, ?) `
-// })
+router.post("/interestedfree", (req, res, next) => {
+  const insertSQL = `INSERT INTO linktable (id_job, id_free) VALUES (?, ?) `
+})
 
 module.exports = router

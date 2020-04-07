@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useAuth } from "react-auth"
+import { useAuth } from "../../lib/react-auth-new.js"
 import { useJobs } from "../../hooks"
 
 import "../../styles/viewfreelancers.css"

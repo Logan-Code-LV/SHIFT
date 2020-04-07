@@ -4,7 +4,7 @@ import axios from "axios"
 const JOB_POST = "jobpost/JOB_POST"
 
 const initialState = {
-  jobpost: {},
+  jobpost: {}
 }
 
 export default (state = initialState, action) => {
@@ -17,13 +17,14 @@ export default (state = initialState, action) => {
 }
 
 function createPost(job) {
+  console.log(job)
   return new Promise((resolve, reject) => {
     axios
       .post("/api/jobpost", job)
-      .then((resp) => {
+      .then(resp => {
         resolve(resp.data)
       })
-      .catch((e) => {
+      .catch(e => {
         reject()
       })
   })
@@ -31,7 +32,7 @@ function createPost(job) {
 
 export function usePost() {
   // const dispatch = useDispatch()
-  const createJob = (job) => createPost(job)
+  const createJob = job => createPost(job)
 
   return { createJob }
 }

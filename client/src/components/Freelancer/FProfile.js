@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useAuth } from "react-auth"
+import { useAuth } from "../../lib/react-auth-new"
 import { useProfilefree } from "../../hooks"
 
 export default props => {
