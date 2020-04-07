@@ -18,7 +18,7 @@ router.post("/register", (req, res, next) => {
   conn.query(checkSQL, [username], (err, results, fields) => {
     if (results[0].count > 0) {
       res.status(409).json({
-        message: "username exists"
+        message: "username exists",
       })
     } else {
       const insertSql = `INSERT INTO clients (username, password, salt, restname, website) VALUES (?, ?, ?, ?, ?)`
@@ -28,7 +28,7 @@ router.post("/register", (req, res, next) => {
         [username, password, salt, name, website],
         (err1, results1, fields1) => {
           res.json({
-            message: "client added successfully"
+            message: "client added successfully",
           })
           console.log(err1)
         }
@@ -47,7 +47,6 @@ router.post("/login", (req, res, next) => {
       "SELECT username, salt, password FROM clients WHERE username = ?"
 
     conn.query(getSQL, [username], (salterr, saltresults, saltfields) => {
-      console.log(salterr)
       if (saltresults.length > 0) {
         const salt = saltresults[0].salt
         const userpass = saltresults[0].password
@@ -57,11 +56,11 @@ router.post("/login", (req, res, next) => {
             config.get("secret")
           )
           res.json({
-            token: token
+            token: token,
           })
         } else {
           res.status(401).json({
-            message: "Invalid user or password"
+            message: "Invalid user or password",
           })
         }
       }
