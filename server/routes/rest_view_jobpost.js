@@ -20,7 +20,6 @@ router.get("/getid/:username", (req, res, next) => {
   console.log(username, "username")
 
   conn.query(sql, [username], (err, results, fields) => {
-    // console.log(username, id, "username")
     res.json(results[0].id)
   })
 })
