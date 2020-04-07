@@ -12,11 +12,11 @@ import "../assets/shiftoversize.jpg"
 
 import "../styles/home.css"
 
-export default props => {
+export default (props) => {
   return (
     <div className="main">
       <div className="top">
-        <div class="mainheader">
+        <div className="mainheader">
           <a href="#mastercontainer">Home</a>
           <a href="#logomap">About Us</a>
           <a href="#menu">Register</a>

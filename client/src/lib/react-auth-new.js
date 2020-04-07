@@ -10,22 +10,22 @@ class AuthService {
 
   login(username, password) {
     return this.post(`/${this.authPath}`, { username, password })
-      .then(resp => {
+      .then((resp) => {
         this.setToken(resp.token)
         return Promise.resolve(resp)
       })
-      .catch(err => {
+      .catch((err) => {
         return Promise.reject(err)
       })
   }
 
   loginFree(username, password) {
     return this.post("/loginfree", { username, password })
-      .then(resp => {
+      .then((resp) => {
         this.setToken(resp.token)
         return Promise.resolve(resp)
       })
-      .catch(err => {
+      .catch((err) => {
         return Promise.reject(err)
       })
   }
@@ -95,7 +95,7 @@ class AuthService {
 
     const headers = {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     }
 
     if (this.loggedIn()) {
@@ -104,7 +104,7 @@ class AuthService {
 
     return fetch(url, { headers, ...options })
       .then(this._checkStatus)
-      .then(resp => resp.json())
+      .then((resp) => resp.json())
   }
 }
 
@@ -112,21 +112,21 @@ export const api = new AuthService()
 
 export const AuthContext = createContext({
   isAuthenticated: false,
-  redirectUrl: "/login"
+  redirectUrl: "/login",
 })
 
-export const AuthProvider = props => {
+export const AuthProvider = (props) => {
   const [isAuthenticated, setAuthenticated] = useState(api.loggedIn())
 
   function signin(username, password) {
     return new Promise((resolve, reject) => {
       api
         .login(username, password)
-        .then(data => {
+        .then((data) => {
           setAuthenticated(true)
           resolve(api.getProfile())
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err)
         })
     })
@@ -136,11 +136,11 @@ export const AuthProvider = props => {
     return new Promise((resolve, reject) => {
       api
         .loginFree(username, password)
-        .then(data => {
+        .then((data) => {
           setAuthenticated(true)
           resolve(api.getProfile())
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err)
         })
     })
@@ -159,7 +159,7 @@ export const AuthProvider = props => {
     redirectUrl: props.redirectUrl,
     signinFree: signinFree,
     signin: signin,
-    signout: signout
+    signout: signout,
   }
 
   return (
@@ -168,7 +168,7 @@ export const AuthProvider = props => {
 }
 
 AuthProvider.defaultProps = {
-  redirectUrl: "/login"
+  redirectUrl: "/login",
 }
 
 export const AuthRoute = ({ component: Component, ...rest }) => {
@@ -176,7 +176,7 @@ export const AuthRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={props =>
+      render={(props) =>
         auth.isAuthenticated ? (
           <Component {...props} />
         ) : (
