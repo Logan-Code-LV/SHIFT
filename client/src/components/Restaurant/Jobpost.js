@@ -1,23 +1,24 @@
 import React, { useState } from "react"
 import { usePost, useJobs } from "../../hooks"
-import { useAuth } from "../../lib/react-auth-new"
+import { useAuth } from "../../lib/react-auth-new.js"
 
 export default props => {
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")
   const [deadline, setDeadline] = useState("")
+
   const { createJob } = usePost()
   const { profile } = useAuth()
-  const { restid } = useJobs(profile.username)
+  const { restId } = useJobs(profile.username)
 
   function handleSubmit(e) {
+    console.log(restId)
     e.preventDefault()
-    createJob({ restname, jobdesc, pay, restid, deadline })
-    // .then(resp => {
-    //   get(restid)
-    //   console.log(restid)
-    // })
+    createJob({ restname, jobdesc, pay, deadline, restId })
+    // .then((resp) => {
+    //   // get(restId)
+    //   console.log(restname)
   }
 
   return (

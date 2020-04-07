@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { useEffect } from "react"
 
-const VIEWJOBPOSTS = "jobpost/VIEWJOBPOSTS"
+const VIEWJOBS = "jobpost/VIEWJOS"
 const GETID = "jobpost/GETID"
 const initialState = {
   viewjobs: [],
@@ -11,7 +11,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case VIEWJOBPOSTS:
+    case VIEWJOBS:
       return { ...state, viewjobs: action.payload }
     case GETID:
       return { ...state, rest_id: action.payload }
@@ -25,7 +25,7 @@ function getJobs(restid) {
   return dispatch => {
     axios.get("/api/jobpost/" + restid).then(resp => {
       dispatch({
-        type: VIEWJOBPOSTS,
+        type: VIEWJOBS,
         payload: resp.data
       })
     })
@@ -44,11 +44,12 @@ function getUserId(username) {
 export function useJobs(username) {
   const dispatch = useDispatch()
   const view = useSelector(appState => appState.viewpostState.viewjobs)
-  const restid = useSelector(appState => appState.viewpostState.rest_id)
-  // const get = restid => dispatch(getJobs(restid))
+  const restId = useSelector(appState => appState.viewpostState.rest_id)
+
   useEffect(() => {
     dispatch(getUserId(username))
-    dispatch(getJobs(restid))
-  }, [dispatch, restid])
-  return { view, restid }
+    dispatch(getJobs(restId))
+  }, [dispatch, restId])
+
+  return { view, restId }
 }

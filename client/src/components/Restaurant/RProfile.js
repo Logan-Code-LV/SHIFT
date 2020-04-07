@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useAuth } from "../../lib/react-auth-new"
+import { useAuth } from "../../lib/react-auth-new.js"
 import { useProfile } from "../../hooks"
 import { Link } from "react-router-dom"
 
