@@ -21,7 +21,6 @@ function getTheJob() {
   return dispatch => {
     axios.get("/api/viewjobs").then(resp => {
       const data = resp.data
-      console.log(data)
       dispatch({
         type: GET_JOBS,
         payload: data
@@ -34,6 +33,8 @@ export function useTheJob() {
   const dispatch = useDispatch()
   const free = useSelector(appState => appState.thejobState.jobs)
   const get = () => dispatch(getTheJob())
-
+  useEffect(() => {
+    get()
+  }, [dispatch])
   return { free, get }
 }

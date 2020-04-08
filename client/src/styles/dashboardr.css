@@ -20,6 +20,11 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
+form {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .body {
   color: white;
   width: 1000px;

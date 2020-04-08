@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react"
-import { useAuth } from "react-auth"
-import { useJobs } from "../../hooks"
+import { useAuth } from "../../lib/react-auth-new.js"
+import { usePost, useJobs } from "../../hooks"
 
 import "../../styles/viewfreelancers.css"
 
 export default props => {
-  const { profile } = useAuth()
-  const { viewpost, view, getId } = useJobs(profile.username)
+  const [restname, setRestname] = useState("")
+  const [jobdesc, setJobdesc] = useState("")
+  const [pay, setPay] = useState("")
+  const [deadline, setDeadline] = useState("")
 
+  const { createJob } = usePost()
+  const { profile } = useAuth()
+  const { view, restId } = useJobs(profile.username)
+  console.log(view)
   return (
     <div className="jobposts">
       <h3>Job Posts:</h3>

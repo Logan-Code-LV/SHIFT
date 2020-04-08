@@ -18,6 +18,18 @@ router.get("/getid/:username", (req, res, next) => {
   const username = req.params.username
   const sql = `Select id FROM shift.clients WHERE username = ?;`
   console.log(username, "username")
+
+  conn.query(sql, [username], (err, results, fields) => {
+    res.json(results[0].id)
+  })
+})
+
+router.get("/getfreeid/:username", (req, res, next) => {
+  const username = req.params.username
+  console.log(username)
+  const sql = `Select id FROM shift.freelancers WHERE username = ?;`
+  console.log(username, "username")
+
   conn.query(sql, [username], (err, results, fields) => {
     res.json(results[0].id)
   })
