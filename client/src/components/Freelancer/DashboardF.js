@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { usePost } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { useJobs } from "../../hooks"
+import { useProfilefree } from "../../hooks"
 import { useAuth } from "../../lib/react-auth-new.js"
 
 import Viewjobs from "./Viewjobs.js"
@@ -11,7 +11,6 @@ import "../../styles/dashboardf.css"
 
 export default props => {
   const { profile, signout } = useAuth()
-  const { viewpost, view, getId } = useJobs(profile.username)
   function handleLogout(e) {
     e.preventDefault()
 

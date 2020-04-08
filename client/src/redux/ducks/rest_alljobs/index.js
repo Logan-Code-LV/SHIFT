@@ -41,6 +41,7 @@ function getUserId(username) {
     })
   }
 }
+
 export function useJobs(username) {
   const dispatch = useDispatch()
   const view = useSelector(appState => appState.viewpostState.viewjobs)

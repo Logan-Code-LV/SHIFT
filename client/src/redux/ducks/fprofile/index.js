@@ -1,38 +1,39 @@
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
+import { useEffect } from "react"
 
-const GET_FPROFILE = "register/GET_FPROFILE"
+const GET_FREEID = "register/GET_FREEID"
 
 const initialState = {
-  freelancer: {}
+  freeid: ""
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_FPROFILE:
-      return { ...state, freelancer: action.payload }
+    case GET_FREEID:
+      return { ...state, freeid: action.payload }
     default:
       return state
   }
 }
 
-function getFProfile(username) {
+function getFreeId(username) {
   return dispatch => {
-    axios.get("/api/profilefree/" + username).then(resp => {
-      const data = resp.data
-      console.log(data)
+    axios.get("/api/getfreeid/" + username).then(resp => {
       dispatch({
-        type: GET_FPROFILE,
-        payload: data
+        type: GET_FREEID,
+        payload: resp.data
       })
     })
   }
 }
 
-export function useProfilefree() {
+export function useProfilefree(username) {
   const dispatch = useDispatch()
-  const fprofile = username => dispatch(getFProfile(username))
-  const free = useSelector(appState => appState.fprofileState.freelancer)
+  const free_id = useSelector(appState => appState.fprofileState.freeid)
 
-  return { fprofile, free }
+  useEffect(() => {
+    dispatch(getFreeId(username))
+  }, [dispatch])
+  return { free_id }
 }
