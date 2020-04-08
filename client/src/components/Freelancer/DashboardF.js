@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { usePost } from "../../hooks"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import { useJobs } from "../../hooks"
+import { useProfilefree } from "../../hooks"
 import { useAuth } from "../../lib/react-auth-new.js"
 
 import Viewjobs from "./Viewjobs.js"
@@ -9,21 +9,15 @@ import SelectedJobs from "./SelectedJobs.js"
 
 import "../../styles/dashboardf.css"
 
-export default (props) => {
+export default props => {
   const { profile, signout } = useAuth()
-
-  const { viewpost, view, getId } = useJobs(profile.username)
   function handleLogout(e) {
     e.preventDefault()
 
-  function handleLogout(e) {
-    e.preventDefault()
-
-    signout().then((resp) => {
+    signout().then(resp => {
       props.history.push("/")
     })
   }
-
   return (
     <div className="dashboardf">
       <h1>Freelance Dashboard</h1>
@@ -33,7 +27,7 @@ export default (props) => {
         SHIFT will notify the restaurant of your availability and will message
         you soon.
       </p>
-      <button onSubmit={handleLogout}>Logout</button>
+
       <div className="dashboardfcomponents">
         <Viewjobs props={props} />
         <SelectedJobs props={props} />

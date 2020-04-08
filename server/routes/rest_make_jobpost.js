@@ -19,7 +19,7 @@ router.post("/jobpost", (req, res, next) => {
       res.json({
         message: "job added successfully!"
       })
-      console.log(results)
+      console.log(id)
     }
   )
 })

@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router()
+let conn = require("../routes/db")
 
 router.get("/interestedfree", (req, res, next) => {
   const sql = `SELECT  id
@@ -13,8 +14,13 @@ router.get("/interestedfree", (req, res, next) => {
   })
   console.log(results)
 })
-// router.post("/interestedfree", (req, res, next) => {
-//   const insertSQL = `INSERT INTO linktable (id_job, id_free) VALUES (?, ?) `
-// })
+router.post("/interestedfree", (req, res, next) => {
+  const jobId = req.body.id_job
+  const freeId = req.body.id_free
+  const insertSQL = `INSERT INTO shift.linktable(id_job, id_free) VALUES (?,?)`
+  conn.query(insertSQL, [jobId, freeId], (err, results, fields) => {
+    res.json({ Message: "added Interest" })
+  })
+})
 
 module.exports = router

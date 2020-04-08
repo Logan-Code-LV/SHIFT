@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useAuth } from "../../lib/react-auth-new.js"
 
-export default (props) => {
+export default props => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -10,7 +10,7 @@ export default (props) => {
   function handleLogin(e) {
     e.preventDefault()
 
-    signin(username, password).then((resp) => {
+    signin(username, password).then(resp => {
       props.props.history.push("/dashboardr")
     })
   }
@@ -23,7 +23,7 @@ export default (props) => {
           <input
             type="text"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={e => setUsername(e.target.value)}
             placeholder="Username"
           />
         </div>
@@ -31,7 +31,7 @@ export default (props) => {
           <input
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
             placeholder="Password"
           />
         </div>

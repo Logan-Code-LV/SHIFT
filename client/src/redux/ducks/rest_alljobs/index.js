@@ -6,7 +6,7 @@ const VIEWJOBS = "jobpost/VIEWJOS"
 const GETID = "jobpost/GETID"
 const initialState = {
   viewjobs: [],
-  rest_id: "",
+  rest_id: ""
 }
 
 export default (state = initialState, action) => {
@@ -20,30 +20,32 @@ export default (state = initialState, action) => {
   }
 }
 
-function getJobs(restID) {
-  return (dispatch) => {
-    axios.get("/api/jobpost/" + restID).then((resp) => {
+function getJobs(restid) {
+  console.log(restid)
+  return dispatch => {
+    axios.get("/api/jobpost/" + restid).then(resp => {
       dispatch({
         type: VIEWJOBS,
-        payload: resp.data,
+        payload: resp.data
       })
     })
   }
 }
 function getUserId(username) {
-  return (dispatch) => {
-    axios.get("/api/getid/" + username).then((resp) => {
+  return dispatch => {
+    axios.get("/api/getid/" + username).then(resp => {
       dispatch({
         type: GETID,
-        payload: resp.data,
+        payload: resp.data
       })
     })
   }
 }
+
 export function useJobs(username) {
   const dispatch = useDispatch()
-  const view = useSelector((appState) => appState.viewpostState.viewjobs)
-  const restId = useSelector((appState) => appState.viewpostState.rest_id)
+  const view = useSelector(appState => appState.viewpostState.viewjobs)
+  const restId = useSelector(appState => appState.viewpostState.rest_id)
 
   useEffect(() => {
     dispatch(getUserId(username))

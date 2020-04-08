@@ -4,7 +4,7 @@ import { usePost, useJobs } from "../../hooks"
 
 import "../../styles/viewfreelancers.css"
 
-export default (props) => {
+export default props => {
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")

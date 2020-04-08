@@ -3,7 +3,7 @@ import { useAuth } from "../../lib/react-auth-new.js"
 import { useProfile } from "../../hooks"
 import { Link } from "react-router-dom"
 
-export default (props) => {
+export default props => {
   const { profile } = useAuth()
   const { rprofile, rest } = useProfile()
 
