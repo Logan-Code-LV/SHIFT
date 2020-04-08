@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from "react"
-
+import { useAllInterested } from "../../hooks"
 import { useItems } from "../../hooks"
-import { useTheJob } from "../../hooks"
-import { useJobs } from "../../hooks"
+import { useTheJob, useProfilefree } from "../../hooks"
 import { useAuth } from "../../lib/react-auth-new.js"
 
 export default props => {
-  const { free, get } = useTheJob()
+  const { free } = useTheJob()
   const { add } = useItems()
+  const { addMe } = useAllInterested()
   const { profile } = useAuth()
-  const { freeId, updateInterest } = useJobs(profile.username)
-
-  useEffect(() => {
-    get()
-  }, [])
+  const { free_id } = useProfilefree(profile.username)
 
   return (
     <div className="viewjobstitle">
@@ -28,7 +24,7 @@ export default props => {
               className="dashboardfbutton"
               onClick={e => {
                 add(item)
-                updateInterest({ itemId: item.id, freeId })
+                addMe(item.id, free_id)
               }}
             >
               Interested

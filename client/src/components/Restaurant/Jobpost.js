@@ -6,20 +6,20 @@ export default props => {
   const [restname, setRestname] = useState("")
   const [jobdesc, setJobdesc] = useState("")
   const [pay, setPay] = useState("")
-  // const [job_date, setJob_date] = useState("")
   const [deadline, setDeadline] = useState("")
 
   const { createJob } = usePost()
   const { profile } = useAuth()
-  const { restId, get } = useJobs(profile.username)
+  const { restId } = useJobs(profile.username)
 
   function handleSubmit(e) {
+    console.log(restId)
     e.preventDefault()
-    createJob({ restname, jobdesc, pay, restId, deadline }).then(resp => {
-      get(restId)
-    })
+    createJob({ restname, jobdesc, pay, deadline, restId })
+    // .then((resp) => {
+    //   // get(restId)
+    //   console.log(restname)
   }
-  console.log(restId)
 
   return (
     <div className="register">
