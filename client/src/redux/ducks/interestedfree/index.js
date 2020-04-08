@@ -21,13 +21,13 @@ export default (state = initialState, action) => {
   }
 }
 
-function getInterested() {
+function getInterested(id_free) {
   return dispatch => {
-    axios.get("/api/interestedfree").then(resp => {
-      const data = resp.data
+    axios.get("/api/interestedfree" + id_free).then(resp => {
+      // const data = resp.data
       dispatch({
         type: GET_FREE,
-        payload: data
+        payload: resp.data
       })
     })
   }
@@ -47,9 +47,10 @@ function addInterested(id_job, id_free) {
 export function useAllInterested() {
   const dispatch = useDispatch()
   const addMe = (idjob, idfree) => dispatch(addInterested(idjob, idfree))
+  const addfree = useSelector(appState => appState.interestedState.interested)
   useEffect(() => {
     dispatch(getInterested())
   }, [dispatch])
 
-  return { addMe }
+  return { addMe, addfree }
 }
