@@ -3,11 +3,11 @@ const router = express.Router()
 let conn = require("../routes/db")
 
 router.get("/interestedfree", (req, res, next) => {
-  const sql = `SELECT  id
+  const sql = `SELECT  firstname, lastname, email, phone
   FROM shift.jobpost jp 
-  LEFT JOIN linktable lt on lt.id_job = jp.id
-  LEFT JOIN freelancers f on lt.id_free = f.id 
-  WHERE f.id = ? and jp.id = ?`
+  LEFT JOIN shift.linktable lt on lt.id_job = jp.id
+  LEFT JOIN shift.freelancers f on lt.id_free = f.id 
+  WHERE f.id = ? and jp.id = ?;`
 
   conn.query(sql, (err, results, fields) => {
     res.json(results)
