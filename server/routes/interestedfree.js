@@ -1,5 +1,4 @@
 const express = require("express")
-let conn = require("./db")
 const router = express.Router()
 let conn = require("../routes/db")
 

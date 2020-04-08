@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { useAuth } from "../../lib/react-auth-new.js"
-import { useJobs } from "../../hooks"
 import { usePost, useJobs } from "../../hooks"
 import { BrowserRouter as Link } from "react-router-dom"
 
@@ -19,17 +18,17 @@ export default (props) => {
   return (
     <div className="jobposts">
       <h3>Job Posts:</h3>
-      <Link to="/interestedfreelancers">
-        <div className="viewfreelancers">
-          {view.map((item, i) => (
+      <div className="viewfreelancers">
+        {view.map((item, i) => (
+          <Link to="/interestedfreelancers">
             <div key={"job" + i} className="onejob">
               <h4 className="jobname">{item.restname}</h4>
               <h5 className="jobdesc">Position: {item.jobdesc}</h5>
               <h5 className="jobpay">Pay: ${item.pay} an hour</h5>
             </div>
-          ))}
-        </div>
-      </Link>
+          </Link>
+        ))}
+      </div>
     </div>
   )
   console.log(view)

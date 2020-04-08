@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { useAuth } from "../lib/react-auth-new.js"
 import { AuthProvider } from "../lib/react-auth-new.js"
 
@@ -22,7 +22,7 @@ import Jobpost from "./Restaurant/Jobpost.js"
 import Viewjobs from "./Freelancer/Viewjobs"
 import InterestedFreelancers from "./Restaurant/InterestedFreelancers.js"
 
-export default props => {
+export default (props) => {
   return (
     <AuthProvider>
       <Router>
