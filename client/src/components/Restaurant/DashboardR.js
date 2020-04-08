@@ -4,6 +4,7 @@ import { usePost } from "../../hooks"
 import { useAuth } from "../../lib/react-auth-new.js"
 import Jobpost from "./Jobpost"
 import Viewfreelancers from "./Viewfreelancers"
+import ViewJobPost from "./ViewJobPost"
 
 // import "../../styles/dashboardr.css"
 
@@ -28,6 +29,9 @@ export default props => {
         </div>
         <div className="freelancers">
           <Viewfreelancers props={props} />
+        </div>
+        <div>
+          <ViewJobPost props={props} />
         </div>
       </div>
       <div>
