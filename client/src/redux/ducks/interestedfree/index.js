@@ -7,25 +7,33 @@ const ADD_FREE = "interestedfree/ADD_FREE"
 
 const initialState = {
   interested: [],
+<<<<<<< HEAD
   addfree: {},
+=======
+>>>>>>> master
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_FREE:
       return { ...state, interested: action.payload }
-    case ADD_FREE:
-      return { ...state, addfree: action.payload }
     default:
       return state
   }
 }
 
+<<<<<<< HEAD
 function getInterested(id_free) {
   return (dispatch) => {
     axios.get("/api/interestedfree" + id_free).then((resp) => {
       const data = resp.data
       console.log(data)
+=======
+function getInterested(interestedid) {
+  return (dispatch) => {
+    axios.get("/api/showinterestedfree/" + interestedid).then((resp) => {
+      const data = resp.data
+>>>>>>> master
       dispatch({
         type: GET_FREE,
         payload: resp.data,
@@ -48,10 +56,10 @@ function addInterested(id_job, id_free) {
 export function useAllInterested() {
   const dispatch = useDispatch()
   const addMe = (idjob, idfree) => dispatch(addInterested(idjob, idfree))
-  const addfree = useSelector((appState) => appState.interestedState.interested)
-  useEffect(() => {
-    dispatch(getInterested())
-  }, [dispatch])
+  const showFree = useSelector(
+    (appState) => appState.interestedState.interested
+  )
+  const getFree = (restId) => dispatch(getInterested(restId))
 
-  return { addMe, addfree }
+  return { addMe, showFree, getFree }
 }

@@ -1,32 +1,31 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import { useAuth } from "../../lib/react-auth-new.js"
-import { usePost, useJobs } from "../../hooks"
-import { BrowserRouter as Link } from "react-router-dom"
+import { useJobs, useAllInterested } from "../../hooks"
 
 import "../../styles/viewfreelancers.css"
 
 export default (props) => {
-  const [restname, setRestname] = useState("")
-  const [jobdesc, setJobdesc] = useState("")
-  const [pay, setPay] = useState("")
-  const [deadline, setDeadline] = useState("")
-
-  const { createJob } = usePost()
   const { profile } = useAuth()
-  const { view, restId } = useJobs(profile.username)
-  console.log(view)
+  const { restId } = useJobs(profile.username)
+  const { showFree, getFree } = useAllInterested()
+
+  useEffect(() => {
+    getFree(restId)
+  }, [restId])
+
   return (
     <div className="jobposts">
       <h3>Job Posts:</h3>
       <div className="viewfreelancers">
-        {view.map((item, i) => (
-          <Link to="/interestedfreelancers">
-            <div key={"job" + i} className="onejob">
-              <h4 className="jobname">{item.restname}</h4>
-              <h5 className="jobdesc">Position: {item.jobdesc}</h5>
-              <h5 className="jobpay">Pay: ${item.pay} an hour</h5>
-            </div>
-          </Link>
+        {showFree.map((item, i) => (
+          <div key={"job" + i} className="onejob">
+            <h2>{item.jobdesc}</h2>
+            <h4 className="jobname">
+              {item.firstname} {item.lastname}
+            </h4>
+            <h5 className="jobdesc">Position: {item.email}</h5>
+            <h5 className="jobpay">Pay: ${item.phone} an hour</h5>
+          </div>
         ))}
       </div>
     </div>
