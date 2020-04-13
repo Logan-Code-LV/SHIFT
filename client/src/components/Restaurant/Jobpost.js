@@ -22,9 +22,9 @@ export default (props) => {
   }
 
   return (
-    <div className="register">
-      <h4>Get your SHIFT covered below</h4>
-      <form onSubmit={handleSubmit}>
+    <div className="jobpost">
+      <h4 className="postshift">Get your SHIFT covered!</h4>
+      <form className="jobpostform" onSubmit={handleSubmit}>
         <input
           type="text"
           value={restname}

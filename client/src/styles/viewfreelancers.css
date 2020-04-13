@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: grey;
   background: linear-gradient(to left, #204051, #3b6978, #84a9ac, #cae8d5);
 }
@@ -6,28 +6,29 @@ body {
 .container {
   width: 1000px;
   margin: 0 auto;
-}
+} */
 
-h1 {
+/* h1 {
   color: white;
   width: 1000px;
   margin: 0 auto;
   font-size: 75px;
   text-align: center;
-}
-
+} */
+/* 
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: "Open Sans", sans-serif;
-}
+} */
 
 .dashboardrcomponents {
   display: flex;
-  width: 1000px;
+  width: 1350px;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .jobposts h3,
@@ -39,16 +40,17 @@ h6 {
 
 .jobpost {
   margin-right: 150px;
-  margin-top: 100px;
+  margin-top: 15px;
+  width: 300px;
 }
 
 .viewfreelancers {
-  display: flex;
-  width: 800px;
-  margin: 0 auto;
-  align-items: center;
-  flex-wrap: wrap;
   text-align: center;
+  color: white;
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .onejob {
@@ -56,8 +58,8 @@ h6 {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin: 0 auto;
-  width: 130px;
-  height: 165px;
+  width: 200px;
+  height: 250px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -73,14 +75,14 @@ h6 {
   text-transform: capitalize;
 }
 
-.body {
+/* .body {
   color: white;
   width: 1000px;
   margin: 0 auto;
   font-size: 20px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
-}
+} */
 
 .components {
   display: flex;
@@ -89,7 +91,7 @@ h6 {
   margin: 0 auto;
 }
 
-button {
+/* button {
   width: 180px;
   background-color: #4caf50;
   color: white;
@@ -98,7 +100,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
+} */
 
 .registerarea a,
 .logins a {
@@ -144,7 +146,7 @@ input {
   top: 0%;
   left: 0%;
   width: 100%;
-  height: 1200px;
+  height: 1000px;
   overflow: hidden;
 }
 

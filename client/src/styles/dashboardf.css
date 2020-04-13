@@ -53,15 +53,41 @@ button {
 .viewjobstitle {
   text-align: center;
   color: white;
+  width: 600px;
+}
+
+.logout {
+  margin-left: 20px;
 }
 
 .dashboardfcomponents {
   display: flex;
+  width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.freedashh1 {
+  color: white;
   width: 1200px;
   margin: 0 auto;
+  margin-top: 25px;
+  font-size: 75px;
+  text-align: center;
+  font-family: "Lobster", cursive;
 }
 
 .viewjobscomponent {
+  text-align: center;
+  color: white;
+  width: 660px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* .viewjobscomponent {
   text-align: center;
   width: 600px;
   grid-gap: 15px;
@@ -69,7 +95,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-}
+} */
 
 .viewjobscomponent div {
   border: 1px solid white;
@@ -83,10 +109,10 @@ button {
 .cart {
   text-align: center;
   color: white;
-  width: 1000px;
+  width: 660px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .cartitem {
@@ -106,7 +132,7 @@ button {
 .carttitle {
   text-align: center;
   color: white;
-  width: 1000px;
+  width: 600px;
 }
 
 .dashboardf p {
@@ -119,7 +145,7 @@ button {
   width: 110px;
 }
 
-.box-area {
+/* .box-area {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -205,4 +231,4 @@ button {
     transform: translateY(-2000px) rotate(360deg);
     opacity: 0;
   }
-}
+} */

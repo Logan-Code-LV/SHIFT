@@ -9,18 +9,21 @@ import SelectedJobs from "./SelectedJobs.js"
 
 import "../../styles/dashboardf.css"
 
-export default props => {
+export default (props) => {
   const { profile, signout } = useAuth()
   function handleLogout(e) {
     e.preventDefault()
 
-    signout().then(resp => {
+    signout().then((resp) => {
       props.history.push("/")
     })
   }
   return (
     <div className="dashboardf">
-      <h1>Freelance Dashboard</h1>
+      <div className="logout">
+        <button onClick={handleLogout}>Logout</button>
+      </div>
+      <h1 className="freedashh1">Freelance Dashboard</h1>
       <br />
       <p>
         Please select a positon below that you would be interested in working.
@@ -31,9 +34,6 @@ export default props => {
       <div className="dashboardfcomponents">
         <Viewjobs props={props} />
         <SelectedJobs props={props} />
-      </div>
-      <div>
-        <button onClick={handleLogout}>Logout</button>
       </div>
       <ul className="box-area">
         <li></li>

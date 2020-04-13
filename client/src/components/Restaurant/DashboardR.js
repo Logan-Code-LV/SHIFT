@@ -6,21 +6,24 @@ import Jobpost from "./Jobpost"
 import Viewfreelancers from "./Viewfreelancers"
 import ViewJobPost from "./ViewJobPost"
 
-// import "../../styles/dashboardr.css"
+import "../../styles/dashboardr.css"
 
-export default props => {
+export default (props) => {
   const { signout } = useAuth()
 
   function handleLogout(e) {
     e.preventDefault()
 
-    signout().then(resp => {
+    signout().then((resp) => {
       props.history.push("/")
     })
   }
 
   return (
     <div>
+      <div className="logout">
+        <button onClick={handleLogout}>Logout</button>
+      </div>
       <h1>Restaurant Dashboard</h1>
 
       <div className="dashboardrcomponents">
@@ -30,12 +33,9 @@ export default props => {
         <div className="freelancers">
           <Viewfreelancers props={props} />
         </div>
-        <div>
-          <ViewJobPost props={props} />
-        </div>
       </div>
       <div>
-        <button onClick={handleLogout}>Logout</button>
+        <ViewJobPost props={props} />
       </div>
       <ul className="box-area">
         <li></li>

@@ -1,4 +1,3 @@
-import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 
 const JOB_POST = "jobpost/JOB_POST"
@@ -6,7 +5,7 @@ const JOB_POSTS = "jobpost/JOB_POSTS"
 
 const initialState = {
   jobpost: {},
-  jobposts: []
+  jobposts: [],
 }
 
 export default (state = initialState, action) => {
@@ -25,11 +24,11 @@ function createPost(job) {
   return new Promise((resolve, reject) => {
     axios
       .post("/api/jobpost", job)
-      .then(resp => {
+      .then((resp) => {
         resolve(resp.data)
         console.log(resp.data)
       })
-      .catch(e => {
+      .catch((e) => {
         reject()
       })
   })
@@ -38,7 +37,7 @@ function createPost(job) {
 export function usePost() {
   // const dispatch = useDispatch()
 
-  const createJob = job => createPost(job)
+  const createJob = (job) => createPost(job)
 
   // useEffect(() => {
   //   dispatch(getUserId(username))

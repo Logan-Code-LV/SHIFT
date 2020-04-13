@@ -15,20 +15,20 @@ export default (props) => {
 
   return (
     <div className="jobposts">
-      <h3>Job Posts:</h3>
+      <h3 className="matches">Freelancer Matches:</h3>
       <div className="viewfreelancers">
         {showFree.map((item, i) => (
           <div key={"job" + i} className="onejob">
-            <h2>{item.jobdesc}</h2>
+            <h2>Interested Freelancer</h2>
+            <h4>{item.jobdesc}</h4>
             <h4 className="jobname">
               {item.firstname} {item.lastname}
             </h4>
-            <h5 className="jobdesc">Position: {item.email}</h5>
-            <h5 className="jobpay">Pay: ${item.phone} an hour</h5>
+            <h5 className="jobdesc">Email: {item.email}</h5>
+            <h5 className="jobpay">Phone Number: {item.phone}</h5>
           </div>
         ))}
       </div>
     </div>
   )
-  console.log(view)
 }

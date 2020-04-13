@@ -9,7 +9,7 @@ router.get("/showinterestedfree/:id", (req, res, next) => {
   FROM shift.jobpost jp 
   LEFT JOIN shift.linktable lt on lt.id_job = jp.id
   LEFT JOIN shift.freelancers f on lt.id_free = f.id 
-  WHERE  jp.client_id = ?;`
+  WHERE  jp.client_id = ? AND f.firstname IS NOT NULL;`
 
   conn.query(sql, [rest_id], (err, results, fields) => {
     res.json(results)

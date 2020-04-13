@@ -7,10 +7,6 @@ const ADD_FREE = "interestedfree/ADD_FREE"
 
 const initialState = {
   interested: [],
-<<<<<<< HEAD
-  addfree: {},
-=======
->>>>>>> master
 }
 
 export default (state = initialState, action) => {
@@ -22,18 +18,10 @@ export default (state = initialState, action) => {
   }
 }
 
-<<<<<<< HEAD
-function getInterested(id_free) {
-  return (dispatch) => {
-    axios.get("/api/interestedfree" + id_free).then((resp) => {
-      const data = resp.data
-      console.log(data)
-=======
 function getInterested(interestedid) {
   return (dispatch) => {
     axios.get("/api/showinterestedfree/" + interestedid).then((resp) => {
       const data = resp.data
->>>>>>> master
       dispatch({
         type: GET_FREE,
         payload: resp.data,

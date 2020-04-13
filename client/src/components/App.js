@@ -26,7 +26,7 @@ export default (props) => {
   return (
     <AuthProvider>
       <Router>
-        <div className="box">
+        <div className="App.js">
           <Route exact path="/" component={Home} />
 
           <Route exact path="/restlogin" component={Restlogin} />

@@ -25,6 +25,10 @@ form {
   font-weight: 700;
 }
 
+.jobpostform {
+  width: 300px;
+}
+
 .body {
   color: white;
   width: 1000px;
@@ -34,10 +38,44 @@ form {
   font-family: "Open Sans", sans-serif;
 }
 
+.matches {
+  font-size: 28px;
+}
+
+.postshift {
+  font-size: 28px;
+}
+
+.vjobposthistorycomp {
+  margin-top: 300px;
+}
+
+.logout {
+  margin-left: 20px;
+}
+
+.jobposthistorycomp {
+  margin-top: 300px;
+}
+
+.jobposthistory {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .components {
   display: flex;
   width: 800px;
   margin: 0 auto;
+}
+
+.freelancer {
+  text-align: center;
+  color: white;
+  width: 660px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 button {
@@ -68,16 +106,12 @@ a {
   position: relative;
   z-index: 1000;
 }
-
+/* 
 .viewjobscomponent {
   width: 500px;
-}
+} */
 
-.register {
-  margin: 0 auto;
-}
-
-.box-area {
+/* .box-area {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -163,4 +197,4 @@ a {
     transform: translateY(-2000px) rotate(360deg);
     opacity: 0;
   }
-}
+} */

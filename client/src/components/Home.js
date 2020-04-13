@@ -14,55 +14,51 @@ import "../styles/home.css"
 
 export default (props) => {
   return (
-    <div className="main">
-      <div className="top">
-        <div className="mainheader">
+    <div className="Home.js">
+      {/* <div className="mainheader">
           <a href="#mastercontainer">Home</a>
           <a href="#logomap">About Us</a>
           <a href="#menu">Register</a>
           <a href="#gallery">Login</a>
+        </div> */}
+      <div className="backgroundimage">
+        <div className="main">
+          <h1 className="logo">SHIFT</h1>
+          <h4 className="tagline">"We've got you covered!"</h4>
         </div>
-        <div className="container">
-          <div className="body">
-            <h1 className="logo">SHIFT</h1>
-            <p>
-              SHIFT is designed to match qualified freelance workers with
-              businesses that need them.
-            </p>
-            <div className="logins">
-              <Freelogin props={props} />
-              <Restlogin props={props} />
-            </div>
-            <br />
-            <h6 className="registerspot"> New here? - Sign up below </h6>
-            <div className="registerarea">
-              <h5>
-                <Link to="/freeregister">Registration (Freelance Workers)</Link>
-              </h5>
-              <h5>
-                <Link to="/restregister">Registration (Restaurants)</Link>
-              </h5>
-            </div>
+      </div>
+      <div className="container">
+        <div className="body">
+          <p className="tagline2">
+            SHIFT is designed to match qualified freelance workers with
+            businesses that need them.
+          </p>
+          <div className="logins">
+            <Freelogin props={props} />
+            <Restlogin props={props} />
+          </div>
+          <br />
+          <h6 className="registerspot"> Sign up below </h6>
+          <div className="registerarea">
+            <h5>
+              <Link to="/freeregister">Registration (Freelance Workers)</Link>
+            </h5>
+            <h5>
+              <Link to="/restregister">Registration (Restaurants)</Link>
+            </h5>
           </div>
         </div>
-        <ul className="box-area">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
       </div>
-      {/* <div className="backgroundimage">
-        <img
-          className="img-responsive"
-          src="../assets/shiftoversize.jpg.jpg"
-          alt="logo"
-        />
-      </div> */}
+      <ul className="home-box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   )
 }
