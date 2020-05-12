@@ -56,13 +56,13 @@ export default (props) => {
           <li></li>
         </ul>
       </div>
-      {/* <div className="backgroundimage">
+      <div className="backgroundimage">
         <img
           className="img-responsive"
           src="../assets/shiftoversize.jpg.jpg"
           alt="logo"
         />
-      </div> */}
+      </div>
     </div>
   )
 }
